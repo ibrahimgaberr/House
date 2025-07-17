@@ -26,22 +26,24 @@ export default function Home() {
   }, [timer]);
   return (
     <>
-    {loading ? <Loader/> : 
-    <div>
-      <Navbar/>
-      {/*Main section  */}
-      <MainSection/>
-      {/* Property Section */}
-      <Property/>
-      {/* Our Property Amenities */}
-      <Amenities/>
-       {/*Explore section  */}
-       <Explore/>
-      {/* Gallery section */}
-      <Gallery/>
-       {/* Schedule A Tour */}
-       <ScheduleATour/>
-    </div>} 
+      {
+      loading ? <Loader/> : 
+      <div>
+        <Navbar/>
+        {/*Main section  */}
+        <MainSection/>
+        {/* Property Section */}
+        <Property/>
+        {/* Our Property Amenities */}
+        <Amenities/>
+        {/*Explore section  */}
+        <Explore/>
+        {/* Gallery section */}
+        <Gallery/>
+        {/* Schedule A Tour */}
+        <ScheduleATour/>
+      </div>
+    } 
 
     </>
   )
