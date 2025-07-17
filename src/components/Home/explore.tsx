@@ -17,10 +17,10 @@ export default function Explore() {
         </div>
         <div className="tabs text-center">
           <Tabs defaultValue="one">
-            <TabsList className="mx-auto my-4">
-              <TabsTrigger value="one">One</TabsTrigger>
-              <TabsTrigger value="two">Two</TabsTrigger>
-              <TabsTrigger value="three">Three</TabsTrigger>
+            <TabsList className="mx-auto my-4 p-5  bg-gray-100/60 rounded-3xl w-fit">
+              <TabsTrigger className="p-5 rounded-3xl  cursor-pointer" value="one">One</TabsTrigger>
+              <TabsTrigger className="p-5 rounded-3xl  cursor-pointer" value="two">Two</TabsTrigger>
+              <TabsTrigger className="p-5 rounded-3xl  cursor-pointer" value="three">Three</TabsTrigger>
             </TabsList>
             <TabsContent value="one">
               <div className="mx-auto">
@@ -93,7 +93,7 @@ export default function Explore() {
                           </p>
                         </div>
                       </div>
-                      <div className="bg-[#14453D] w-[70px] h-[70px] p-2 text-white circle flex items-center justify-center transform transition-all duration-300 hover:rotate-45">
+                      <div className="bg-[#14453D] w-[70px] h-[70px] p-2 cursor-pointer text-white circle flex items-center justify-center transform transition-all duration-300 hover:rotate-45">
                         <MoveUpRight size={32} strokeWidth={3} />
                       </div>
                     </div>

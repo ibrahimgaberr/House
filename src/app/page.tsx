@@ -8,11 +8,8 @@ import Loader from "@/components/loader/loader"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
-import MainSection from "@/components/Home/mainSection"
 import Property from "@/components/Home/property"
-
-
-
+import MainSection from "@/components/Home/MainSection"
 
 export default function Home() {
   
@@ -31,7 +28,7 @@ export default function Home() {
     <>
     {loading ? <Loader/> : 
     <div>
-          <Navbar/>
+      <Navbar/>
       {/*Main section  */}
       <MainSection/>
       {/* Property Section */}

@@ -6,8 +6,10 @@ import { useState, useEffect } from "react";
 
 export default function Navbar() {
   const [isScrolled, setIsScrolled] = useState(false);
+  const [checkTheTopSpace, setCheckTheTopSpace] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const [openCollapse, setOpenCollapse] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>(""); 
 
   function openNavbarMenu() {
     if (openCollapse) {
@@ -20,13 +22,15 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () =>
       window.scrollY > 10 ? setIsScrolled(true) : setIsScrolled(false);
-
+    const CheckTopSpace = () =>
+      window.scrollY > 600 ? setCheckTheTopSpace(true) : setCheckTheTopSpace(false); 
     const handleResize = () =>
       window.innerWidth <= 1023 ? setCollapse(true) : setCollapse(false);
 
     handleResize();
 
     window.addEventListener("scroll", handleScroll);
+    window.addEventListener("scroll", CheckTopSpace);
     window.addEventListener("resize", handleResize);
     return () => {
       window.removeEventListener("scroll", handleScroll);
@@ -53,16 +57,24 @@ export default function Navbar() {
           <>
             <div className="font-bold text-xl">
               <ul className="flex justify-around items-center">
-                <li className="mr-5">
+                <li className={`mr-5 ${activeSection === "property" && checkTheTopSpace ? "text-[#14453D]" : ""}`} 
+                onClick={() => setActiveSection("property")}
+                >
                   <Link href="#property">Property</Link>
                 </li>
-                <li className="mr-5">
+                <li className={`mr-5 ${activeSection === "amenities" && checkTheTopSpace ? "text-[#14453D]" : ""}`} 
+                onClick={() => setActiveSection("amenities")}
+                >
                   <Link href="#amenities">Amenities</Link>
                 </li>
-                <li className="mr-5"    >
+                <li className={`mr-5 ${activeSection === "explore" && checkTheTopSpace ? "text-[#14453D]" : ""}`} 
+                onClick={() => setActiveSection("explore")}
+                >
                   <Link href="#explore">Explore</Link>
                 </li>
-                <li>
+                <li className={`${activeSection === "gallery" && checkTheTopSpace ? "text-[#14453D]" : ""}`} 
+                onClick={() => setActiveSection("gallery")}
+                >
                   <Link href="#gallery">Gallery</Link>
                 </li>
               </ul>
