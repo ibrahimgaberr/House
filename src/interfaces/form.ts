@@ -1,6 +1,6 @@
 export interface FormValues {
     fullName: string,
-    phone: number | string,
+    phone:  string,
     option:string,
-    message?: string
+    message: string
 }

@@ -36,7 +36,7 @@ export default function EnquiryForm() {
     message: Yup.string().optional(),
   });
 
-  function handleSubmit(formValues: FormValues, { resetForm }: any) {
+  function handleSubmit(formValues: FormValues, { resetForm }: import("formik").FormikHelpers<FormValues>) {
     Swal.fire({
       position: "center",
       icon: "success",
@@ -49,7 +49,7 @@ export default function EnquiryForm() {
   }
 
   function validation(formValues: FormValues) {
-    const errors: any = {};
+    const errors: Record<string, string> = {};
 
     if (!formValues.fullName) {
       errors.fullName = "Full Name must be at least 3 characters";
@@ -102,6 +102,7 @@ export default function EnquiryForm() {
             </div>
           ) : null}
           <PhoneInput
+            defaultCountry="EG"
             name="phone"
             placeholder="Enter phone number"
             className="my-4 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"

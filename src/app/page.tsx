@@ -1,6 +1,5 @@
 'use client'
 import Amenities from "../components/Home/amenities"
-import Property from "../components/Home/propery"
 import Gallery from "../components/Home/gallery"
 import Explore from "../components/Home/explore"
 import Navbar from "../components/Home/navbar"
@@ -9,7 +8,10 @@ import Loader from "@/components/loader/loader"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
-import MainSecion from "@/components/Home/mainSection"
+import MainSection from "@/components/Home/mainSection"
+import Property from "@/components/Home/property"
+
+
 
 
 export default function Home() {
@@ -31,7 +33,7 @@ export default function Home() {
     <div>
           <Navbar/>
       {/*Main section  */}
-      <MainSecion/>
+      <MainSection/>
       {/* Property Section */}
       <Property/>
       {/* Our Property Amenities */}

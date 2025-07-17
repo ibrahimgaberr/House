@@ -3,7 +3,7 @@ import { Button } from "@/components/ui/button"
 import EnquiryForm from "./form";
 
 
-export default function MainSecion() {
+export default function MainSection() {
   return (
     <>
       <section id="home" className="main relative">
