@@ -9,7 +9,7 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import Property from "@/components/Home/property"
-import MainSection from "@/components/Home/MainSection"
+import MainSection from "../components/Home/MainSection"
 
 export default function Home() {
   
