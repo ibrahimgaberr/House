@@ -10,8 +10,9 @@ import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import Property from "@/components/Home/property"
 import ScrollToTop from "@/components/scrolltotop"
-import MainSection from "@/components/Home/MainSection"
 import Footer from "@/components/Home/footer"
+import MainSection from '@/components/Home/MainSection';
+
 
 export default function Home() {
   
