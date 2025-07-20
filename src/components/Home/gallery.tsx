@@ -7,10 +7,10 @@ export default function Gallery() {
       <div className="relative">
         <div className="gallery py-4">
           <div className="content text-white text-center">
-            <h5 className="bg-gray-100/20 p-2 rounded-4xl inline-block uppercase mb-2">
+            <p className="bg-gray-200/60 text-[#14453D] uppercase text-center text-md lg:text-base inline-block p-2 rounded-3xl w-fit">
               Building Gallery
-            </h5>
-            <h1 className="text-4xl font-bold mb-5 lg:text-[56px] lg:font-bold mt-3">Residence Building View</h1>
+            </p>
+            <h1 className="text-2xl md:text-4xl font-bold mb-5 mt-3">Residence Building View</h1>
           </div>
         </div>
         

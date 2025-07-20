@@ -153,7 +153,7 @@ export default function EnquiryForm() {
           <div className="text-right">
             <Button
               type="submit"
-              className="p-[25px] font-bold text-lg group rounded-4xl text-white bg-sky-700 border-0 cursor-pointer"
+              className="p-[15px] lg:p-[25px] font-bold text-lg group rounded-4xl text-white bg-sky-700 border-0 cursor-pointer"
               variant="outline"
             >
               Submit Now{" "}
