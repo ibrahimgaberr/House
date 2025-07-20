@@ -37,6 +37,7 @@ export default function EnquiryForm() {
   });
 
   function handleSubmit(formValues: FormValues, { resetForm }: import("formik").FormikHelpers<FormValues>) {
+
     Swal.fire({
       position: "center",
       icon: "success",
@@ -95,13 +96,14 @@ export default function EnquiryForm() {
           />
           {formik.errors.fullName && formik.touched.fullName ? (
             <div
-              className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-300 "
+              className="mb-4 text-sm text-red-800 rounded-lg"
               role="alert"
             >
               {formik.errors.fullName}
             </div>
           ) : null}
           <PhoneInput
+          international
             defaultCountry="EG"
             name="phone"
             placeholder="Enter phone number"
@@ -112,7 +114,7 @@ export default function EnquiryForm() {
           />
           {formik.errors.phone && formik.touched.phone ? (
             <div
-              className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-300 "
+              className="mb-4 text-sm text-red-800 rounded-lg"
               role="alert"
             >
               {formik.errors.phone}
@@ -134,7 +136,7 @@ export default function EnquiryForm() {
           </select>
           {formik.errors.option && formik.touched.option ? (
             <div
-              className="p-4 mb-4 text-sm text-red-800 rounded-lg bg-red-300 "
+              className="mb-4 text-sm text-red-800 rounded-lg"
               role="alert"
             >
               {formik.errors.option}
@@ -151,7 +153,7 @@ export default function EnquiryForm() {
           <div className="text-right">
             <Button
               type="submit"
-              className="btn font-bold text-lg group rounded-4xl text-white bg-sky-700 border-0 cursor-pointer"
+              className="p-[25px] font-bold text-lg group rounded-4xl text-white bg-sky-700 border-0 cursor-pointer"
               variant="outline"
             >
               Submit Now{" "}

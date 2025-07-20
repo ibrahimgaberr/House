@@ -9,9 +9,10 @@ export default function Amenities() {
         <div data-aos="fade-up" className="collection grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-6 gap-4">
 
             <div data-aos="flip-right" className="text-center group">
-            <div className="index  group-hover:animate-flip360">01</div>
+            <div className="border-2 border-solid border-white relative bg-[#DEC678] inline-block text-center leading-[35px] font-bold p-[3px] w-[40px] h-[40px] 
+rounded-full top-[50px] right-[-60px]  group-hover:animate-flip360">01</div>
             <Image
-              className="image mb-6 mx-auto"
+              className="rounded-full object-cover mb-6 mx-auto"
               width={160}
               height={160}
               src="/image-landing-circle.png"
@@ -22,9 +23,10 @@ export default function Amenities() {
           </div>
           <div data-aos="flip-left" className="md:block text-center">
             <div className="hidden lg:block h-[40px]"></div>
-            <div className="index">02</div>
+            <div className="border-2 border-solid border-white relative bg-[#DEC678] inline-block text-center leading-[35px] font-bold p-[3px] w-[40px] h-[40px] 
+rounded-full top-[50px] right-[-60px]">02</div>
             <Image
-              className="image mb-6 mx-auto"
+              className="rounded-full object-cover mb-6 mx-auto"
               width={160}
               height={160}
               src="/image-landing-circle.png"
@@ -34,10 +36,11 @@ export default function Amenities() {
             <p className="text-base text-gray-700">Explore our meticulously best designed spaces and indulge.</p>
           </div>
           <div data-aos="flip-right" className="lg:block text-center">
-            <div className="index">03</div>
+            <div className="border-2 border-solid border-white relative bg-[#DEC678] inline-block text-center leading-[35px] font-bold p-[3px] w-[40px] h-[40px] 
+rounded-full top-[50px] right-[-60px]">03</div>
 
             <Image
-              className="image mb-6 mx-auto"
+              className="rounded-full object-cover mb-6 mx-auto"
               width={160}
               height={160}
               src="/image-landing-circle.png"
@@ -49,10 +52,11 @@ export default function Amenities() {
           <div data-aos="flip-left" className="lg:block text-center">
             <div className="hidden lg:block h-[40px]"></div>
 
-            <div className="index">04</div>
+            <div className="border-2 border-solid border-white relative bg-[#DEC678] inline-block text-center leading-[35px] font-bold p-[3px] w-[40px] h-[40px] 
+rounded-full top-[50px] right-[-60px]">04</div>
 
             <Image
-              className="image mb-6 mx-auto"
+              className="rounded-full object-cover mb-6 mx-auto"
               width={160}
               height={160}
               src="/image-landing-circle.png"

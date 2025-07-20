@@ -9,21 +9,22 @@ import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import Property from "@/components/Home/property"
+import ScrollToTop from "@/components/scrolltotop"
 import MainSection from "@/components/Home/MainSection"
+import Footer from "@/components/Home/footer"
 
 export default function Home() {
   
-  const [loading, isLoading] = useState(true);
-
-      const timer = setTimeout(() => {
-      isLoading(false);
-    }, 1000); 
+  const [loading, setIsLoading] = useState(true);
 
   useEffect(() => {
     AOS.init();
+    const timer = setTimeout(() => {
+      setIsLoading(false);
+    }, 1000); 
 
     return () => clearTimeout(timer); 
-  }, [timer]);
+  }, []);
   return (
     <>
       {
@@ -42,6 +43,10 @@ export default function Home() {
         <Gallery/>
         {/* Schedule A Tour */}
         <ScheduleATour/>
+        {/* Footer */}
+        <Footer/>
+        {/* Scroll to top button */}
+        <ScrollToTop />
       </div>
     } 
 

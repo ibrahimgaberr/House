@@ -10,12 +10,12 @@ export default function ScrollToTop() {
     }, []);
   return (
     <>
-    <div className="fixed bottom-4 right-4 z-10">
+    <div className="fixed bottom-4 right-4 z-5 hover:border-2 border-black rounded-full">
       <button
         onClick={() => window.scrollTo({ top: 0, behavior: 'smooth' })}
         className="bg-[#14453D] text-white p-2 rounded-full shadow-lg hover:bg-[#042821] transition-colors cursor-pointer"
       >
-        <ArrowBigUp size={46} />
+        <ArrowBigUp size={40} />
       </button>
     </div>
     </>

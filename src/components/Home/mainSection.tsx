@@ -15,11 +15,11 @@ export default function MainSection() {
                 <MapPin className="inline mr-1" />
                 538 Joanie Fort Apt. 933 Louisiana
               </h5>
-              <h1 className="py-5 text-4xl font-extrabold md:text-4xl text-anime-style-2">
+              <h1 className="py-5 mb-5 lg:text-[56px] lg:font-bold text-4xl font-extrabold md:text-4xl text-anime-style-2">
                 Welcome to Your <br /> Luxurious Haven
               </h1>
               <Button
-                className="btn font-bold text-lg group rounded-4xl text-white bg-sky-700 border-0 cursor-pointer"
+                className="p-[25px] font-bold text-lg group rounded-4xl text-white bg-sky-700 border-0 cursor-pointer"
                 variant="outline"
               >
                 Schedule A Visit{" "}

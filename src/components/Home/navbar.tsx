@@ -41,8 +41,8 @@ export default function Navbar() {
   return (
     <>
       <div
-        className={`flex items-center justify-between bg-white p-3 rounded-4xl fixed z-5 transition-all duration-300 ${
-          isScrolled ? "navbar-expand top-0 rounded-none" : "navbar top-5"
+        className={`flex items-center justify-between bg-white p-3 rounded-[3rem] fixed z-5 transition-all duration-300 ${
+          isScrolled ? "w-full left-1/2 -translate-x-1/2 top-0 rounded-none" : "w-[80%] left-1/2 -translate-x-1/2 top-5"
         }`}
       >
         <div className="ml-5">
@@ -57,22 +57,22 @@ export default function Navbar() {
           <>
             <div className="font-bold text-xl">
               <ul className="flex justify-around items-center">
-                <li className={`mr-5 ${activeSection === "property" && checkTheTopSpace ? "text-[#14453D]" : ""}`} 
+                <li className={`mr-5 ${activeSection === "property" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
                 onClick={() => setActiveSection("property")}
                 >
                   <Link href="#property">Property</Link>
                 </li>
-                <li className={`mr-5 ${activeSection === "amenities" && checkTheTopSpace ? "text-[#14453D]" : ""}`} 
+                <li className={`mr-5 ${activeSection === "amenities" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
                 onClick={() => setActiveSection("amenities")}
                 >
                   <Link href="#amenities">Amenities</Link>
                 </li>
-                <li className={`mr-5 ${activeSection === "explore" && checkTheTopSpace ? "text-[#14453D]" : ""}`} 
+                <li className={`mr-5 ${activeSection === "explore" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
                 onClick={() => setActiveSection("explore")}
                 >
                   <Link href="#explore">Explore</Link>
                 </li>
-                <li className={`${activeSection === "gallery" && checkTheTopSpace ? "text-[#14453D]" : ""}`} 
+                <li className={`${activeSection === "gallery" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
                 onClick={() => setActiveSection("gallery")}
                 >
                   <Link href="#gallery">Gallery</Link>
@@ -81,7 +81,7 @@ export default function Navbar() {
             </div>
             <div className="flex">
               <div className="search mr-5 flex items-center">
-                <Search /> <div className="dash"></div>
+                <Search /> <div className="inline-block w-[2px] h-[25px] bg-[rgb(148,147,147)] ml-[8px]"></div>
               </div>
               <div className="mr-5">
                 <ul className="flex items-center">
@@ -104,7 +104,6 @@ export default function Navbar() {
                       alt="linkedin"
                     />
                   </li>
-                  {/* <li><Image width={30} height={20} src="/youtube-icon.svg" alt="youtube" /></li> */}
                 </ul>
               </div>
             </div>
@@ -112,12 +111,21 @@ export default function Navbar() {
         )}
       </div>
       <div
-        className={`slide-menu ${
-          openCollapse ? "open" : ""
-        } fixed top-0 left-0 right-0 bottom-0 h-[100vh] bg-white p-4 z-6`}
+        className={`-translate-x-full transition-transform duration-300 ease-in-out ${
+          openCollapse ? "translate-x-0" : ""
+        } fixed top-0 left-0 right-0 bottom-0 h-[100vh] bg-white p-4 z-16`}
       >
-        <div className="ml-5">
+        <div className="flex justify-between ml-5">
           <Image width={150} height={50} src="/nav-logo.png" alt="Logo" />
+          <div className="ml-auto pr-4 cursor-pointer">
+            <CircleX
+              size={32}
+              strokeWidth={2}
+              onClick={() => {
+                setOpenCollapse(false);
+              }}
+            />
+          </div>
         </div>
         <div className="font-bold text-xl items-center">
           <ul className="flex flex-col justify-around items-center gap-2">
@@ -159,9 +167,6 @@ export default function Navbar() {
           </ul>
         </div>
         <div className="flex flex-col justify-center items-center">
-          <div className="search mt-3">
-            <Search />
-          </div>
           <div>
             <p className="text-2xl font-bold py-4">Social Links:</p>
             <ul className="flex flex-row p-3 items-center">
@@ -185,15 +190,6 @@ export default function Navbar() {
                 />
               </li>
             </ul>
-          </div>
-          <div className="ml-auto pr-4 cursor-pointer">
-            <CircleX
-              size={32}
-              strokeWidth={2}
-              onClick={() => {
-                setOpenCollapse(false);
-              }}
-            />
           </div>
         </div>
       </div>

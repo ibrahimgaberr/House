@@ -8,25 +8,26 @@ export default function Explore() {
     <section id="explore">
       <section className="Explore mb-3 p-7 mt-5 md:mt-35 lg:p-0">
         <div className="text-center">
-          <h5 className="bg-gray-100/60 uppercase text-base inline-block p-3 mb-3 rounded-3xl w-fit">
+          {/* <h5 className="bg-gray-100/60 uppercase text-base inline-block p-3 mb-3 rounded-3xl w-fit">
             our best properties
-          </h5>
-          <h1 className="text-sm font-bold mb-5">
+          </h5> */}
+          <h1 className="text-4xl font-bold mb-5 lg:text-[56px] lg:font-bold">
             Explore Our Premier Of <br /> Single Property Retreat
           </h1>
         </div>
         <div className="tabs text-center">
           <Tabs defaultValue="one">
-            <TabsList className="mx-auto my-4 p-5  bg-gray-100/60 rounded-3xl w-fit">
-              <TabsTrigger className="p-5 rounded-3xl  cursor-pointer" value="one">One</TabsTrigger>
-              <TabsTrigger className="p-5 rounded-3xl  cursor-pointer" value="two">Two</TabsTrigger>
-              <TabsTrigger className="p-5 rounded-3xl  cursor-pointer" value="three">Three</TabsTrigger>
+            <TabsList className="mx-auto py-[27px]  my-4 gap-3 bg-gray-200/60 rounded-3xl w-fit">
+              <TabsTrigger className=" py-5 px-10 rounded-3xl text-2xl cursor-pointer data-[state=active]:!bg-sky-600 data-[state=active]:!text-white focus:!bg-sky-600 focus:!text-white" value="one">One</TabsTrigger>
+              <TabsTrigger className=" py-5 px-10 rounded-3xl text-2xl cursor-pointer focus:!bg-sky-600 focus:!text-white" value="two">Two</TabsTrigger>
+              <TabsTrigger className=" py-5 px-10 rounded-3xl text-2xl cursor-pointer focus:!bg-sky-600 focus:!text-white" value="three">Three</TabsTrigger>
             </TabsList>
             <TabsContent value="one">
               <div className="mx-auto">
                 <div className="flex flex-col xl:flex-row gap-2 justify-center items-center">
                   <div>
                     <Image
+                      className="rounded-2xl"
                       data-aos="fade-right"
                       data-aos-offset="300"
                       data-aos-easing="ease-in-sine"
@@ -37,13 +38,14 @@ export default function Explore() {
                     />
                     <div className="hidden xl:flex py-2" data-aos="fade-up" data-aos-duration="500">
                       <Image
+                      className="rounded-2xl"
                         width={300}
                         height={225}
                         src="/explore1.png"
                         alt="Image"
                       />
                       <Image
-                        className="ml-3"
+                        className="ml-3 rounded-2xl"
                         width={290}
                         height={225}
                         src="/explore2.png"
@@ -93,7 +95,7 @@ export default function Explore() {
                           </p>
                         </div>
                       </div>
-                      <div className="bg-[#14453D] w-[70px] h-[70px] p-2 cursor-pointer text-white circle flex items-center justify-center transform transition-all duration-300 hover:rotate-45">
+                      <div className="bg-[#14453D] w-[70px] h-[70px] p-2 cursor-pointer text-white rounded-full flex items-center justify-center transform transition-all duration-300 hover:rotate-45">
                         <MoveUpRight size={32} strokeWidth={3} />
                       </div>
                     </div>
@@ -106,6 +108,7 @@ export default function Explore() {
                 <div className="flex flex-col xl:flex-row gap-2 justify-center items-center">
                   <div>
                     <Image
+                    className="rounded-2xl"
                       data-aos="fade-right"
                       data-aos-offset="300"
                       data-aos-easing="ease-in-sine"
@@ -116,13 +119,14 @@ export default function Explore() {
                     />
                     <div className="hidden xl:flex py-2" data-aos="fade-up" data-aos-duration="500">
                       <Image
+                        className="rounded-2xl"
                         width={300}
                         height={225}
                         src="/explore2.png"
                         alt="Image"
                       />
                       <Image
-                        className="ml-3"
+                        className="ml-3 rounded-2xl"
                         width={290}
                         height={225}
                         src="/explore1.png"
@@ -132,6 +136,7 @@ export default function Explore() {
                   </div>
                   <div className="relative">
                     <Image
+                    className="rounded-2xl"
                       data-aos="fade-left"
                       data-aos-offset="300"
                       data-aos-easing="ease-in-sine"
@@ -172,7 +177,7 @@ export default function Explore() {
                           </p>
                         </div>
                       </div>
-                      <div className="bg-sky-800 w-[70px] h-[70px] p-2 text-white circle flex items-center justify-center">
+                      <div className="bg-[#14453D] w-[70px] h-[70px] p-2 cursor-pointer text-white rounded-full flex items-center justify-center transform transition-all duration-300 hover:rotate-45">
                         <MoveUpRight size={32} strokeWidth={3} />
                       </div>
                     </div>
@@ -185,6 +190,7 @@ export default function Explore() {
                 <div className="flex flex-col xl:flex-row gap-2 justify-center items-center">
                   <div>
                     <Image
+                      className="rounded-2xl"
                       data-aos="fade-right"
                       data-aos-offset="300"
                       data-aos-easing="ease-in-sine"
@@ -195,13 +201,14 @@ export default function Explore() {
                     />
                     <div className="hidden xl:flex py-2" data-aos="fade-up" data-aos-duration="500">
                       <Image
+                        className="rounded-2xl"
                         width={300}
                         height={225}
                         src="/explore1.png"
                         alt="Image"
                       />
                       <Image
-                        className="ml-3"
+                        className="ml-3 rounded-2xl"
                         width={290}
                         height={225}
                         src="/explore2.png"
@@ -251,7 +258,7 @@ export default function Explore() {
                           </p>
                         </div>
                       </div>
-                      <div className="bg-sky-800 w-[70px] h-[70px] p-2 text-white circle flex items-center justify-center">
+                      <div className="bg-[#14453D] w-[70px] h-[70px] p-2 cursor-pointer text-white rounded-full flex items-center justify-center transform transition-all duration-300 hover:rotate-45">
                         <MoveUpRight size={32} strokeWidth={3} />
                       </div>
                     </div>

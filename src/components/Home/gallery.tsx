@@ -10,7 +10,7 @@ export default function Gallery() {
             <h5 className="bg-gray-100/20 p-2 rounded-4xl inline-block uppercase mb-2">
               Building Gallery
             </h5>
-            <h1 className="text-xs md:text-base lg:font-bold">Residence Building View</h1>
+            <h1 className="text-4xl font-bold mb-5 lg:text-[56px] lg:font-bold mt-3">Residence Building View</h1>
           </div>
         </div>
         

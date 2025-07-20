@@ -1,5 +1,6 @@
 @import "tailwindcss";
 @import "tw-animate-css";
+@tailwind utilities;
 
 @custom-variant dark (&:is(.dark *));
 
@@ -113,86 +114,35 @@
 
 @layer base {
   * {
-    @apply border-border outline-ring/50;
+    @apply border-border outline-ring/50 box-border;
+    scroll-behavior: smooth;
   }
+  
+  html, body {
+    @apply overflow-x-hidden;
+  }
+  
   body {
-    @apply bg-background text-foreground;
+    @apply bg-background text-foreground font-sans text-base;
+    font-family: "Figtree", sans-serif;
   }
-}
-
-* {
-  box-sizing: border-box;
-  scroll-behavior: smooth;
-}
-
-html, body {
-  overflow-x: hidden;
-}
-
-body {
-  font-size: 16px;
-  font-family: "Figtree", sans-serif;
 }
 
 .container {
   margin: 0 auto;
-  width: 90%;
+  width: 85%;
 }
 
-h1 {
+/* h1 {
   font-size: 56px;
   font-weight: 700;
-}
-
-.navbar {
-  width: 80%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-.navbar-expand {
-  width: 100%;
-  left: 50%;
-  transform: translateX(-50%);
-}
-
-.dash {
-  display: inline-block;
-  width: 2px;
-  height: 25px;
-  background-color: rgb(148, 147, 147);
-  margin-left: 8px;
-}
+} */
 
 .main {
   background-image: url('../../public/main-page-cover.png');
   background-size: cover;
   background-position: center;
   height: 115vh;
-}
-
-.image{
-  border-radius: 50%;
-  object-fit: cover;
-}
-
-.index {
-  border: 2px solid #FFF;
-  position: relative;
-  background-color: #DEC678;
-  display: inline-block;
-  text-align: center;
-  line-height: 35px;
-  font-weight: bold;
-  padding: 3px;
-  width: 40px;
-  height: 40px;
-  border-radius: 50%;
-  top: 50px;
-  right: -60px;
-}
-
-.btn {
-  padding: 25px 25px;
 }
 
 .gallery {
@@ -242,18 +192,6 @@ h1 {
   }
 }
 
-
-.circle {
-  border-radius: 50%;
-}
-.slide-menu {
-  transform: translateX(-100%);
-  transition: transform 0.3s ease-in-out;
-}
-
-.slide-menu.open {
-  transform: translateX(0);
-}
 .iti__dropdown-content {
   box-shadow: none !important;
 }
@@ -274,24 +212,4 @@ h1 {
   width: 100% !important;
   height: 2.5rem !important;
   padding: 0.5rem 0.75rem 0.5rem 5.9rem !important;
-}
-
-.custom-after::after{
-  content: "";
-  position: absolute;
-  height: 40px;
-  width: 40px;
-  display: inline-block;
-  border-radius: 50%;
-  transition: all 0.4s;
-  background: #446A64;
-  left: 5px;
-  top: 4px;
-  z-index: -1;
-}
-
-.custom-after:hover::after {
-    width: 94%;
-    transition: all 0.4s;
-    border-radius: 80px;
 }

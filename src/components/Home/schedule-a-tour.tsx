@@ -18,7 +18,7 @@ export default function ScheduleATour() {
                   <Image width={300} height={340} src="/house2.png" alt="House" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"/>
                 </div>
 
-                      <div className="lines absolute bottom-[-30%] left-[-15%] z-0">
+                      <div className="lines absolute bottom-[-30%] left-[-15%] z-[-1]">
                         <Image
                           className="hidden lg:block"
                           width={600}
@@ -33,9 +33,19 @@ export default function ScheduleATour() {
               <p className="text-4xl text-white font-extrabold py-4 leading-12">Home Waiting For You <br/>Here Schedule A Tour</p>
               <p data-aos="zoom-in" className="mb-3 text-gray-200">Indulge in the epitome of luxury living at Luxury, where every amenity is meticulously designed to elevate your lifestyle.</p>
               <div className="to-animate">
-              <Button className="relative z-1 custom-after rounded-4xl text-black bg-amber-200 border-0 py-6 my-2 cursor-pointer hover:text-white" variant="outline">
+              {/* <Button className="relative z-1 rounded-4xl text-black bg-amber-200 border-0 py-6 my-2 cursor-pointer
+               hover:text-white after:content-[''] after:absolute after:h-10 after:w-10 after:inline-block after:rounded-full 
+               after:transition-all after:duration-400 after:bg-[#446A64] after:left-[5px] after:top-[4px]
+                after:-z-10 hover:after:w-[94%] hover:after:rounded-[80px]" variant="outline">
                 <Link href={'#home'}>View Our Property</Link>
-              </Button>
+              </Button> */}
+              <Button className="relative z-1 rounded-4xl bg-gray-200 leading-3.5 text-black text-lg border-0 py-6 my-2 cursor-pointer hover:text-white
+              after:content-[''] after:absolute after:h-10 after:w-10 after:inline-block after:rounded-full after:transition-all 
+              after:duration-400 after:bg-[#446A64] after:left-[5px] after:top-[4px] after:-z-10 
+              hover:after:w-[94%] hover:after:rounded-[80px]
+              ">
+                <Link href={'#home'}>View Our Property</Link>
+              </Button> 
               </div>
             </div>
           </div>
