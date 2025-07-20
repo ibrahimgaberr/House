@@ -133,16 +133,11 @@
   width: 85%;
 }
 
-/* h1 {
-  font-size: 56px;
-  font-weight: 700;
-} */
-
 .main {
   background-image: url('../../public/main-page-cover.png');
   background-size: cover;
   background-position: center;
-  height: 115vh;
+  height: 120vh;
 }
 
 .gallery {

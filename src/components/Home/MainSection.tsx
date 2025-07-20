@@ -8,7 +8,7 @@ export default function MainSecion() {
     <>
       <section id="home" className="main relative">
         {/* hero section */}
-        <div className="container pt-[9.77rem] lg:pt-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
+        <div className="container pt-[10rem] lg:pt-0 absolute top-1/2 left-1/2 transform -translate-x-1/2 -translate-y-1/2">
           <div className="flex flex-col lg:flex-row justify-center md:justify-around items-center w-full gap-6">
             <div className="w-full md:w-2/3 text-center md:text-left">
               <h5 className="bg-gray-200/60 p-1 rounded-2xl inline-block">

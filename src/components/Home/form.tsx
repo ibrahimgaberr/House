@@ -82,8 +82,8 @@ export default function EnquiryForm() {
 
   return (
     <>
-      <section className="form bg-gray-300/90 p-7 rounded-3xl">
-        <h3 className="text-xl font-bold py-3">Make An Enquiry</h3>
+      <section className="form bg-gray-300/90 p-5 rounded-3xl">
+        <h3 className="text-xl font-bold py-2">Make An Enquiry</h3>
         <form onSubmit={formik.handleSubmit}>
           <Input
             name="fullName"
