@@ -2,16 +2,13 @@
 import Amenities from "../components/Home/amenities"
 import Gallery from "../components/Home/gallery"
 import Explore from "../components/Home/explore"
-import Navbar from "../components/Home/navbar"
 import ScheduleATour from "../components/Home/schedule-a-tour"
 import Loader from "@/components/loader/loader"
 import AOS from 'aos';
 import 'aos/dist/aos.css';
 import { useEffect, useState } from 'react';
 import Property from "@/components/Home/property"
-import ScrollToTop from "@/components/scrolltotop"
-import Footer from "@/components/Home/footer"
-import MainSection from '@/components/Home/MainSection';
+import MainSection from '@/components/Home/MainHomeSection';
 
 
 export default function Home() {
@@ -31,7 +28,6 @@ export default function Home() {
       {
       loading ? <Loader/> : 
       <div>
-        <Navbar/>
         {/*Main section  */}
         <MainSection/>
         {/* Property Section */}
@@ -45,9 +41,6 @@ export default function Home() {
         {/* Schedule A Tour */}
         <ScheduleATour/>
         {/* Footer */}
-        <Footer/>
-        {/* Scroll to top button */}
-        <ScrollToTop />
       </div>
     } 
 

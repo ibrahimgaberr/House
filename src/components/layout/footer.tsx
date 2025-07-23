@@ -6,7 +6,7 @@ import {  MailPlus, MapPin, Phone } from "lucide-react";
 export default function Footer() {
     return (
         <>
-            <footer className="p-8 bg-black w-[100%] text-white">
+            <footer className="p-8 bg-black w-[100%] text-white ">
                 <div className="container flex flex-col lg:flex-row justify-between items-center relative after:content-[''] after:block after:w-[80%] 
                 after:h-[1px] after:bg-gray-300 after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-20px]">
                 <div className="img mb-5 lg:mb-0">
@@ -22,13 +22,22 @@ export default function Footer() {
                 <li className="mb-3 hover:text-[#DEC678]">
                   <Link href="#amenities">Amenities</Link>
                 </li>
-              </ul>
-              <ul className="flex flex-col items-center text-lg font-bold">
                 <li className="mb-3 hover:text-[#DEC678]">
                   <Link href="#explore">Explore</Link>
                 </li>
-                <li className="hover:text-[#DEC678]">
+                <li className="mb-3 hover:text-[#DEC678]">
                   <Link href="#gallery">Gallery</Link>
+                </li>
+              </ul>
+              <ul className="flex flex-col items-center text-lg font-bold">
+                <li className="mb-3 hover:text-[#DEC678]">
+                  <Link href="/about">About Us</Link>
+                </li>
+                <li className="mb-3 hover:text-[#DEC678]">
+                  <Link href="/contact">Contact Us</Link>
+                </li>
+                <li className="mb-3 hover:text-[#DEC678]">
+                  <Link href="/apartment">Apartment</Link>
                 </li>
               </ul>
           </div>

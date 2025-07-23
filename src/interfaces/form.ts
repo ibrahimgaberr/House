@@ -4,3 +4,11 @@ export interface FormValues {
     option:string,
     message: string
 }
+
+export interface SendMessageValues {
+    fullName: string,
+    email: string,
+    phone: string,
+    subject: string,
+    message: string,
+}

@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Figtree } from "next/font/google";
 import 'intl-tel-input/build/css/intlTelInput.css';
 import "./globals.css";
+import SharedLayout from "@/components/layout/sharedLayout";
 
 
 
@@ -27,7 +28,9 @@ export default function RootLayout({
       <body
         className={figtree.className}
       >
+        <SharedLayout>
         {children}
+        </SharedLayout>
       </body>
     </html>
   );

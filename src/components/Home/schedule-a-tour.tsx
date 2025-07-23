@@ -1,6 +1,6 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import OurButton from "../layout/button";
+
 
 export default function ScheduleATour() {
     return (
@@ -32,18 +32,7 @@ export default function ScheduleATour() {
               <p data-aos="zoom-in" className="bg-gray-200/10 text-white text-center uppercase  text-md lg:text-base inline-block p-2 rounded-3xl w-fit">schedule a tour</p>
               <p className="text-2xl md:text-4xl font-bold mb-5 text-white py-4 leading-9 lg:leading-12">Home Waiting For You <br/>Here Schedule A Tour</p>
               <p data-aos="zoom-in" className="mb-3 text-gray-200">Indulge in the epitome of luxury living at Luxury, where every amenity is meticulously designed to elevate your lifestyle.</p>
-              <div className=" flex justify-center lg:justify-start">
-
-              <Button className="relative z-1 rounded-4xl bg-gray-200 leading-3.5
-               text-black text-lg border-0 py-6 my-2 cursor-pointer hover:text-white
-              after:content-[''] after:absolute after:h-10 after:w-10 after:inline-block after:rounded-full after:transition-all 
-              after:duration-400 after:bg-[#446A64] after:left-[5px] after:top-[4px] after:-z-10 
-              hover:after:w-[94%] hover:after:rounded-[80px]
-              ">
-                
-                <Link href={'#home'}>View Our Property</Link>
-              </Button> 
-              </div>
+              <OurButton name="View Our Property" pathLink="#"/>
             </div>
           </div>
         </div>

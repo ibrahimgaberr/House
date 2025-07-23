@@ -1,6 +1,5 @@
 import Image from "next/image";
-import { Button } from "@/components/ui/button";
-import Link from "next/link";
+import OurButton from "../layout/button";
 
 export default function Property() {
   return (
@@ -22,25 +21,8 @@ export default function Property() {
               <p className="text-md md:text-4xl font-extrabold py-4 leading-6 md:leading-12">Elegance Every Detail <br/>Welcome Suite Villa</p>
               <p className="mb-3 text-gray-700">Experience the pinnacle of luxury living at our exclusive property, where every detail has been meticulously crafted to provide an unparalleled retreat. Nestled in the heart of, this haven offers.</p>
               <div className="to-animate">
-                <p className="text-gray-700 mb-2">Discover the essence of luxury our exclusive property in Dallas, where timeless elegance and modern best comfort converge.</p>
-              <div className=" flex justify-center lg:justify-start">
-
-              <Button className="relative z-1 rounded-4xl bg-gray-200 leading-3.5
-               text-black text-lg border-0 py-6 my-2 cursor-pointer hover:text-white
-              after:content-[''] after:absolute after:h-10 after:w-10 after:inline-block after:rounded-full after:transition-all 
-              after:duration-400 after:bg-[#446A64] after:left-[5px] after:top-[4px] after:-z-10 
-              hover:after:w-[94%] hover:after:rounded-[80px]
-              ">
-                
-                <Link href={'#home'}>View Our Property</Link>
-              </Button> 
-              </div>
-              {/* <Button className="relative z-1 rounded-4xl text-black bg-amber-200 border-0 py-6 my-2 cursor-pointer
-               hover:text-white after:content-[''] after:absolute after:h-10 after:w-10 after:inline-block after:rounded-full 
-               after:transition-all after:duration-400 after:bg-[#446A64] after:left-[5px] after:top-[4px]
-                after:-z-10 hover:after:w-[94%] hover:after:rounded-[80px]" variant="outline">
-                <Link href={'#home'}>View Our Property</Link>
-              </Button> */}
+              <p className="text-gray-700 mb-2">Discover the essence of luxury our exclusive property in Dallas, where timeless elegance and modern best comfort converge.</p>
+            <OurButton name="View Our Property" pathLink="#"/>
               </div>
             </div>
           </div>
