@@ -49,7 +49,9 @@ export default function Navbar() {
         }`}
       >
         <div className="ml-5">
-          <Image width={150} height={50} src="/nav-logo.png" alt="Logo" />
+          <Link href="/"> 
+              <Image width={150} height={50} src="/nav-logo.png" alt="Logo" />
+          </Link>
         </div>
 
         {collapse ? (
@@ -60,11 +62,6 @@ export default function Navbar() {
           <>
             <div className="font-bold text-xl">
               <ul className="flex justify-around items-center">
-                <li className={`mr-5 ${activeSection === "property" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
-                onClick={() => setActiveSection("property")}
-                >
-                  <Link href="#property">Property</Link>
-                </li>
                 <li className={`mr-5 ${pathname === "/about" ? "text-[#DEC778]" : ""}`} 
                 >
                   <Link href="/about">About Us</Link>
@@ -76,16 +73,6 @@ export default function Navbar() {
                 <li className={`mr-5 ${pathname === "/apartment" ? "text-[#DEC778]" : ""}`} 
                 >
                   <Link href="/apartment">Apartment</Link>
-                </li>
-                <li className={`mr-5 ${activeSection === "amenities" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
-                onClick={() => setActiveSection("amenities")}
-                >
-                  <Link href="#amenities">Amenities</Link>
-                </li>
-                <li className={`mr-5 ${activeSection === "explore" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
-                onClick={() => setActiveSection("explore")}
-                >
-                  <Link href="#explore">Explore</Link>
                 </li>
                 <li className={`${activeSection === "gallery" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
                 onClick={() => setActiveSection("gallery")}
@@ -131,7 +118,9 @@ export default function Navbar() {
         } fixed top-0 left-0 right-0 bottom-0 h-[100vh] bg-white p-4 z-16`}
       >
         <div className="flex justify-between ml-5">
-          <Image width={150} height={50} src="/nav-logo.png" alt="Logo" />
+          <Link href="/">
+              <Image width={150} height={50} src="/nav-logo.png" alt="Logo" />
+          </Link>
           <div className="ml-auto pr-4 cursor-pointer">
             <CircleX
               size={32}
@@ -144,13 +133,6 @@ export default function Navbar() {
         </div>
         <div className="font-bold text-xl items-center">
           <ul className="flex flex-col justify-around items-center gap-2">
-            <li
-              onClick={() => {
-                setOpenCollapse(false);
-              }}
-            >
-              <Link href="#property">Property</Link>
-            </li>
             <li
               onClick={() => {
                 setOpenCollapse(false);
@@ -177,13 +159,6 @@ export default function Navbar() {
                 setOpenCollapse(false);
               }}
             >
-              <Link href="#amenities">Amenities</Link>
-            </li>
-            <li
-              onClick={() => {
-                setOpenCollapse(false);
-              }}
-            >
               <Link href="#gallery">Gallery</Link>
             </li>
             <li
@@ -192,13 +167,6 @@ export default function Navbar() {
               }}
             >
               <Link href="#schedule">Schedule A Tour</Link>
-            </li>
-            <li
-              onClick={() => {
-                setOpenCollapse(false);
-              }}
-            >
-              <Link href="#explore">Explore</Link>
             </li>
           </ul>
         </div>
