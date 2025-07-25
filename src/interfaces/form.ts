@@ -12,3 +12,9 @@ export interface SendMessageValues {
     subject: string,
     message: string,
 }
+
+export interface NewsSendMessage {
+    fullName: string,
+    phone: string,
+    message: string,
+}

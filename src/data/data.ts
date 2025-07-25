@@ -279,3 +279,126 @@ export const apartmentData = [
     totalLength: 15
   },
 ]
+
+export const newsData = [
+  {
+    id:1,
+    name: 'Joe Root',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:2,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:3,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:4,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:5,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:6,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:7,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:8,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:9,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:10,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  {
+    id:11,
+    name: 'Joe Doe',
+    title: 'Luxury Suite Villa',
+    date: '16 April, 2024',
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    length: 12
+  },
+  // {
+  //   id:11,
+  //   name: 'Joe Doe',
+  //   title: 'Luxury Suite Villa',
+  //   date: '16 April, 2024',
+  //   images: {
+  //     imgURL: '/news/blog-img1.png'
+  //   },
+  //   length: 12
+  // },
+]

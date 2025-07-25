@@ -15,7 +15,7 @@ export default function MainSection({ name }: { name?: string }) {
             <div className="pt-15">
             <h1 className="text-white  text-2xl md:text-6xl font-bold ">{ name }</h1>
             <p className="flex items-center gap-3 mt-10 text-xl md:text-3xl text-white font-bold">
-                <Link href="/">Home</Link> <ChevronRight size={28} strokeWidth={2.25} /> {name}
+                <Link href="/">Home</Link> <ChevronRight size={28} strokeWidth={2.25} /> <Link href={`/${name?.toLowerCase()}`}>{name}</Link>
                 </p>
             </div>
             <div className="p-4 flex items-center bg-white rounded-full shadow-lg">

@@ -7,7 +7,6 @@ import { usePathname } from "next/navigation";
 
 export default function Navbar() {
   const pathname = usePathname();
-  console.log("Current Pathname:", pathname);
   const [isScrolled, setIsScrolled] = useState(false);
   const [checkTheTopSpace, setCheckTheTopSpace] = useState(false);
   const [collapse, setCollapse] = useState(false);
@@ -73,6 +72,10 @@ export default function Navbar() {
                 <li className={`mr-5 ${pathname === "/apartment" ? "text-[#DEC778]" : ""}`} 
                 >
                   <Link href="/apartment">Apartment</Link>
+                </li>
+                <li className={`mr-5 ${pathname === "/news" ? "text-[#DEC778]" : ""}`} 
+                >
+                  <Link href="/news">News</Link>
                 </li>
                 <li className={`${activeSection === "gallery" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
                 onClick={() => setActiveSection("gallery")}
@@ -147,13 +150,20 @@ export default function Navbar() {
             >
               <Link href="/contact">Contact Us</Link>
             </li>
-                <li 
-                onClick={() => {
-                setOpenCollapse(false);
-                  }} 
-                >
-                  <Link href="/apartment">Apartment</Link>
-                </li>
+              <li 
+              onClick={() => {
+              setOpenCollapse(false);
+                }} 
+              >
+                <Link href="/apartment">Apartment</Link>
+              </li>
+              <li 
+              onClick={() => {
+              setOpenCollapse(false);
+                }} 
+              >
+                <Link href="/news">News</Link>
+              </li>
             <li
               onClick={() => {
                 setOpenCollapse(false);
