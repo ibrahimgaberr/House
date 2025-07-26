@@ -1,4 +1,5 @@
 "use client";
+import { use } from "react";
 import MainSection from "@/components/layout/mainSection";
 import { newsData } from "@/data/data";
 import Image from "next/image";
@@ -11,9 +12,14 @@ import { useFormik } from "formik";
 import Swal from "sweetalert2";
 import { NewsSendMessage } from "@/interfaces/form";
 
+interface PageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
 
-export default function NewsDetails({ params }: { params: { id: string } }) {
-  const { id } = params;
+export default function NewsDetails({ params }: PageProps) {
+  const { id } = use(params);
   const newsItem = newsData.find((item) => item.id === parseInt(id));
   const latestNews = newsData.slice(0,3);
   const validationSchema = Yup.object().shape({
@@ -268,8 +274,8 @@ export default function NewsDetails({ params }: { params: { id: string } }) {
                       <p
                         className="flex items-center mt-4 transition-all transition-duration-300 hover:text-[#DEC778] font-semibold cursor-pointer"
                       >
-                        <p className="mr-2">Read More</p>
-                        <span>
+                         Read More
+                        <span className="ml-2">
                           <MoveUpRight size={18} strokeWidth={1.75} />
                         </span>
                       </p>
