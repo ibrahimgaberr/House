@@ -3,8 +3,7 @@ import { use } from "react";
 import MainSection from "@/components/layout/mainSection";
 import { apartmentData } from "@/data/data";
 import Image from "next/image";
-import { UserRound, CalendarDays, MoveUpRight, DoorClosedLocked,
-Fingerprint, UtensilsCrossed, Sofa, Wifi, Sun
+import { DoorClosedLocked,Bath, BedDouble, Fingerprint, UtensilsCrossed, Sofa, Wifi, Sun
  } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
@@ -283,29 +282,28 @@ export default function ApartmentDetails({ params }: PageProps) {
                             <div className="bg-white p-4">
                               <div className="flex items-center space-x-3">
                                 <div className="flex items-center">
-                                  <span className="mr-2">
-                                    <UserRound size={20} strokeWidth={1.75} />
-                                  </span>
-                                  <p className="mt-2">{news.name}</p>
-                                </div>
-                                <div className="flex items-center">
-                                  <span className="mr-2">
-                                    <CalendarDays size={20} strokeWidth={1.75} />
-                                  </span>
-                                  <p className="text-sm mt-1">{news.date}</p>
+                                  <p className="mt-2 text-lg">{news.name}</p>
                                 </div>
                               </div>
-                              <h3 className="text-xl font-semibold mt-4">
-                                {news.title}
-                              </h3>
-                              <p
-                                className="flex items-center mt-4 transition-all transition-duration-300 hover:text-[#DEC778] font-semibold cursor-pointer"
-                              >
-                                Read More
-                                <span className="ml-2">
-                                  <MoveUpRight size={18} strokeWidth={1.75} />
-                                </span>
-                              </p>
+                        <div className="flex items-center gap-4 text-sm text-gray-600 mt-5">
+                        <span>
+                          <BedDouble
+                            size={20}
+                            strokeWidth={1.75}
+                            className="inline-block"
+                          />{" "}
+                          x{news.details.beds}
+                        </span>
+                        <span>
+                          <Bath
+                            size={20}
+                            strokeWidth={1.75}
+                            className="inline-block"
+                          />{" "}
+                          x{news.details.baths}
+                        </span>
+                        <span>{news.details.area}</span>
+                      </div>
                             </div>
         </div>))}
         </div>
