@@ -1,9 +1,11 @@
 "use client";
 import { use } from "react";
 import MainSection from "@/components/layout/mainSection";
-import { newsData } from "@/data/data";
+import { apartmentData } from "@/data/data";
 import Image from "next/image";
-import { UserRound, CalendarDays, MoveUpRight } from "lucide-react";
+import { UserRound, CalendarDays, MoveUpRight, DoorClosedLocked,
+Fingerprint, UtensilsCrossed, Sofa, Wifi, Sun
+ } from "lucide-react";
 import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { Button } from "@/components/ui/button";
@@ -18,10 +20,10 @@ interface PageProps {
   }>;
 }
 
-export default function NewsDetails({ params }: PageProps) {
+export default function ApartmentDetails({ params }: PageProps) {
   const { id } = use(params);
-  const newsItem = newsData.find((item) => item.id === parseInt(id));
-  const latestNews = newsData.slice(0,3);
+  const apartmentDetails = apartmentData.find((item) => item.id === parseInt(id));
+  const latestNews = apartmentData.slice(0,3);
   const validationSchema = Yup.object().shape({
     fullName: Yup.string()
       .min(3, "Full Name must be at least 3 characters")
@@ -83,34 +85,20 @@ export default function NewsDetails({ params }: PageProps) {
 
   return (
     <>
-      <MainSection name="News" showDetails="News Details"/>
+      <MainSection name="Apartment" showDetails="Apartment Details" />
       <div className="w-full md:w-[70%] mx-auto">
           <div className="p-3 md:p-10 flex flex-col items-center justify-center">
             <Image
               className="rounded-2xl mb-2"
               width={500}
               height={400}
-              src={newsItem!.images.imgURL}
+              src={apartmentDetails!.images.imgURL[0]}
               alt="Image"
             />
-            <div className="flex justify-start items-center mt-5">
-              <div className="flex items-center mr-4">
-                <span className="mr-2">
-                  <UserRound size={20} strokeWidth={1.75} />
-                </span>
-                <p>{newsItem?.name}</p>
-              </div>
-              <div className="flex items-center">
-                <span className="mr-2">
-                  <CalendarDays size={20} strokeWidth={1.75} />
-                </span>
-                <p className="text-sm">{newsItem?.date}</p>
-              </div>
+            <div className="flex justify-start items-center my-5"> 
+               <h1 className="font-bold text-2xl my-2">{apartmentDetails?.name}</h1>
             </div>
             <div className="w-full md:w-[60%] text-center">
-              <h3 className="text-2xl font-semibold mt-4 mb-4 text-center">
-                {newsItem?.title}
-              </h3>
               <p className="mb-6 text-gray-600 leading-7">
                 Nestled in the heart of the city, Diamond Apartments offer a
                 perfect blend of luxury and convenience. These elegantly designed
@@ -124,35 +112,76 @@ export default function NewsDetails({ params }: PageProps) {
                 city views, providing a sanctuary.
               </p>
             </div>
-            <div className="flex mt-5 gap-4">
-              <Image
-                className="rounded-2xl mb-2"
-                width={300}
-                height={300}
-                src={newsItem!.images.imgURL}
-                alt="Image"
-              />
-              <Image
-                className="rounded-2xl mb-2"
-                width={300}
-                height={300}
-                src={newsItem!.images.imgURL}
-                alt="Image"
-              />
-            </div>
-            <div className="w-full md:w-[60%] text-center">
-              <h3 className="text-2xl font-semibold mt-4 mb-4 text-center">
-                Unparalleled Elegance: Discover Luxury Villa
-              </h3>
+             <div className="w-full md:w-[60%] text-center my-4">
+                <h2 className="font-bold text-2xl my-2">Diamond Apartment Property Amenities</h2>
               <p className="mb-6 text-gray-600 leading-7">
-                Escape to luxury Serenity Heights, a prestigious hilltop offering
-                panoramic views of the Pacific Ocean. This contemporary
-                masterpiece features 5 bed rooms, 6 bathrooms, an expansive
-                infinity pool that blends seamlessly.
+                Nestled in the heart of the city, Diamond Apartments offer a
+                perfect blend of luxury and convenience. These elegantly designed
+                residence boast spacious layouts, modern amenities, and stunning
+                city views, providing a sanctuary.
               </p>
             </div>
 
-            <div className="bg-[#F1F4F3] p-12 rounded-3xl w-full lg:w-[60%]">
+<div className="flex justify-center items-center py-4">
+  <div className="grid grid-cols-2 gap-4">
+    {/* First pair */}
+    <div className="flex items-center bg-[#F1F4F3] p-5 rounded-2xl">
+      <DoorClosedLocked className="mr-3"/>
+      <p>Lock On Bedroom</p>
+    </div>
+    <div className="flex items-center bg-[#F1F4F3] p-5 rounded-2xl">
+      <Fingerprint className="mr-3"/>
+      <p>Private Entrance</p>
+    </div>
+
+    {/* Second pair */}
+    <div className="flex items-center bg-[#F1F4F3] p-5 rounded-2xl">
+      <UtensilsCrossed className="mr-3"/>
+      <p>Outdoor Dining Area</p>
+    </div>
+    <div className="flex items-center bg-[#F1F4F3] p-5 rounded-2xl">
+      <Sofa className="mr-3"/>
+      <p>Patio Or Balcony</p>
+    </div>
+
+    {/* Third pair */}
+    <div className="flex items-center bg-[#F1F4F3] p-5 rounded-2xl">
+      <Wifi className="mr-3"/>
+      <p>Building Wifi Free</p>
+    </div>
+    <div className="flex items-center bg-[#F1F4F3] p-5 rounded-2xl">
+      <Sun className="mr-3"/>
+      <p>Sun Loungers</p>
+    </div>
+  </div>
+</div>
+
+             <div className="w-full md:w-[60%] text-center my-4">
+                <h2 className="font-bold text-2xl my-2">360° Video Visual Tour Of Diamond Apartment</h2>
+              <p className="mb-6 text-gray-600 leading-7">
+                    Apartments provide range of exceptional amenities designed to enhance the quality of life for its
+                    residents. Here’s a we have list of the amenities offered:
+              </p>
+            </div>
+            <div className="flex flex-col md:flex-row mt-5 gap-4">
+              <Image
+                className="rounded-2xl mb-2"
+                width={300}
+                height={300}
+                src={apartmentDetails!.images.imgURL[0]}
+                alt="Image"
+              />
+              <Image
+                className="rounded-2xl mb-2"
+                width={300}
+                height={300}
+                src={apartmentDetails!.images.imgURL[1]}
+                alt="Image"
+              />
+            </div>
+
+
+            <div className="bg-[#F1F4F3] p-12 rounded-3xl w-full lg:w-[60%] mt-10">
               <h1 className="font-bold text-2xl mb-4">Send us a Message</h1>
               <form id="contactForm" onSubmit={formik.handleSubmit}>
                 <div className="flex gap-4">
@@ -233,25 +262,25 @@ export default function NewsDetails({ params }: PageProps) {
           </div>
       </div>
       <div className="bg-[#F1F4F3] p-10 flex flex-col justify-center items-center mt-10">
-        <p className="bg-gray-200/60 text-[#14453D] mb-2 uppercase text-center text-md lg:text-2xl inline-block p-2 rounded-3xl w-fit">Our News</p>
-        <h2 className="text-lg md:text-4xl font-bold mb-10">Our Latest Blog</h2>            
+        <p className="bg-gray-200/60 text-[#14453D] mb-2 uppercase text-center text-md lg:text-2xl inline-block p-2 rounded-3xl w-fit">Apartment</p>
+        <h2 className="text-lg md:text-4xl font-bold mb-10">Our Latest Property</h2>            
         <div className="flex flex-col md:flex-row gap-5 mb-10 w-[100%] justify-center items-center">
         {latestNews.map((news) => (  <div
                             key={news.id}
-                            className="relative rounded-2xl shadow-md hover:shadow-none group w-[80%] lg:w-[33%] mb-10"
+                            className="rounded-2xl shadow-md hover:shadow-none group w-[80%] lg:w-[33%] mb-10"
                           >
                             {/* Image with overlay container */}
 
                             <Image
-                              className="rounded-2xl w-full transition-all transition-duration-300 group-hover:rotate-1"
+                              className="rounded-t-2xl w-full transition-all transition-duration-300 group-hover:rotate-1"
                               width={600}
                               height={600}
-                              src={news!.images.imgURL}
+                              src={news!.images.imgURL[0]}
                               alt="Image"
                             />
 
                             {/* Content div */}
-                            <div className="absolute rounded-2xl bg-white p-4 -bottom-10 w-[80%] left-[50%] transform -translate-x-1/2 rounded-b-2xl">
+                            <div className="bg-white p-4">
                               <div className="flex items-center space-x-3">
                                 <div className="flex items-center">
                                   <span className="mr-2">
@@ -284,3 +313,14 @@ export default function NewsDetails({ params }: PageProps) {
     </>
   );
 }
+
+
+
+
+
+
+
+
+
+
+

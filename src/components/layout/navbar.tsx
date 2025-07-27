@@ -30,10 +30,13 @@ export default function Navbar() {
       window.innerWidth <= 1023 ? setCollapse(true) : setCollapse(false);
 
     handleResize();
-
-    window.addEventListener("scroll", handleScroll);
-    window.addEventListener("scroll", CheckTopSpace);
-    window.addEventListener("resize", handleResize);
+    
+    if (typeof window !== "undefined") {
+      window.addEventListener("scroll", handleScroll);
+      window.addEventListener("scroll", CheckTopSpace);
+      window.addEventListener("resize", handleResize);    
+    }
+    
     return () => {
       window.removeEventListener("scroll", handleScroll);
       window.removeEventListener("resize", handleResize);

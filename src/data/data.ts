@@ -85,7 +85,7 @@ export const exploreData = [
 
 export const apartmentData = [
   {
-    id:0,
+    id:1,
     name: 'Luxury Suite Villa',
     images: {
       imgURL: ['/apartment/apartment-img1.png','/apartment/apartment-img2.png']
@@ -98,7 +98,7 @@ export const apartmentData = [
     totalLength: 15
   },
   {
-    id:1,
+    id:2,
     name: 'Luxury Suite Villa',
     images: {
       imgURL: ['/apartment/apartment-img2.png','/apartment/apartment-img1.png']
@@ -108,19 +108,6 @@ export const apartmentData = [
       baths: 2,
       area: '2000 sq' 
     }
-  },
-  {
-    id:2,
-    name: 'Luxury Suite Villa',
-    images: {
-      imgURL: ['/apartment/apartment-img1.png','/apartment/apartment-img2.png']
-    },
-    details: {
-      beds: 2,   
-      baths: 2,
-      area: '2000 sq' 
-    },
-    totalLength: 15
   },
   {
     id:3,
@@ -267,6 +254,19 @@ export const apartmentData = [
   },
   {
     id:14,
+    name: 'Luxury Suite Villa',
+    images: {
+      imgURL: ['/apartment/apartment-img1.png','/apartment/apartment-img2.png']
+    },
+    details: {
+      beds: 2,   
+      baths: 2,
+      area: '2000 sq' 
+    },
+    totalLength: 15
+  },
+  {
+    id:15,
     name: 'Luxury Suite Villa',
     images: {
       imgURL: ['/apartment/apartment-img1.png','/apartment/apartment-img2.png']

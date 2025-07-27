@@ -2,7 +2,7 @@ import Image from "next/image";
 import Link from "next/link";
 import { ChevronRight } from "lucide-react";
 
-export default function MainSection({ name }: { name?: string }) {
+export default function MainSection({ name, showDetails }: { name?: string; showDetails?: string }) {
     return (
     <>
         {/* main heading */}
@@ -14,9 +14,11 @@ export default function MainSection({ name }: { name?: string }) {
         <div className="relative inset-0 flex flex-col lg:flex-row justify-center lg:justify-around gap-16 lg:gap-0 items-center w-full h-full z-2">
             <div className="pt-15">
             <h1 className="text-white  text-2xl md:text-6xl font-bold ">{ name }</h1>
-            <p className="flex items-center gap-3 mt-10 text-xl md:text-3xl text-white font-bold">
+            <p className="flex items-center gap-3 mt-10 text-base md:text-3xl text-white font-bold">
                 <Link href="/">Home</Link> <ChevronRight size={28} strokeWidth={2.25} /> <Link href={`/${name?.toLowerCase()}`}>{name}</Link>
-                </p>
+                {showDetails && <span className="flex items-center"><ChevronRight size={28} strokeWidth={2.25} />
+                {showDetails}</span>}
+            </p>
             </div>
             <div className="p-4 flex items-center bg-white rounded-full shadow-lg">
                 <Image 
@@ -24,7 +26,7 @@ export default function MainSection({ name }: { name?: string }) {
                     height={60} 
                     className="rounded-full mr-4" 
                     src="/about/others-img1.png" 
-                    alt="Villa"
+                    alt="Image"
                 />
             <div>
                 <h2 className="font-semibold text-lg lg:text-2xl">Luxury Suite Villa</h2>

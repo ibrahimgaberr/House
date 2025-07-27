@@ -3,6 +3,7 @@ import MainSection from "../layout/mainSection";
 import { Tabs, TabsContent, TabsList, TabsTrigger } from "@/components/ui/tabs";
 import Image from "next/image";
 import { BedDouble, Bath } from "lucide-react";
+import Link from "next/link";
 
 export default function MainApartment() {
   const cardsForTab: number = 6;
@@ -12,7 +13,7 @@ export default function MainApartment() {
   return (
     <>
       {/* Main section */}
-      <MainSection name="Contact Us" />
+      <MainSection name="Apartments" />
       {/* Main section */}
       {/* Cards */}
       <Tabs defaultValue="tab1">
@@ -45,21 +46,26 @@ export default function MainApartment() {
                   >
                     <div className="flex flex-col gap-2">
                       {/* Image container with overlay */}
+                       <Link
+                        href={`/apartment/${item.id}`}
+                        className="cursor-pointer"
+                       >
                       <div className="relative overflow-hidden rounded">
-                        <Image
+                         <Image
                           width={100}
                           height={148}
                           src={item.images.imgURL[0]}
                           alt={item.name}
                           className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:-rotate-3 group-hover:rounded-2xl"
-                        />
+                          />
+
 
                         {/* Overlay that slides up */}
                         <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
                           <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
                         </div>
                       </div>
-
+                       </Link>
                       <h3 className="text-xl mb-3 p-4 font-semibold">
                         {item.name}
                       </h3>
