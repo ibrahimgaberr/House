@@ -1,4 +1,4 @@
-export const AmenitiesData = [
+export const servciesData = [
     {
         "id": 1,
         "index":"01",

@@ -1,14 +1,14 @@
 import Image from "next/image";
-import { AmenitiesData } from "../../data/data";
+import { servciesData } from "../../data/data";
 import React from "react";
-export default function Amenities() {
+export default function Services() {
   return (
     <>
-    <section id="amenities">
+    <section id="services">
       <div className="container text-center p-4">
         <h2 className="text-2xl md:text-4xl font-bold py-7">Our Property Amenities</h2>
         <div data-aos="fade-up" className="collection grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 my-6 gap-4">
-        { AmenitiesData.map((amenity) =>
+        { servciesData.map((amenity) =>
           <React.Fragment key={amenity.id}>
           <div data-aos="flip-right" className="text-center group">
             {amenity.id % 2 === 0 && <div className="hidden lg:block h-[40px]"></div>}

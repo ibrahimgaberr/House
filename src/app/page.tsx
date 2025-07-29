@@ -1,5 +1,5 @@
 'use client'
-import Amenities from "../components/Home/amenities"
+import Services from "../components/Home/services"
 import Gallery from "../components/Home/gallery"
 import Explore from "../components/Home/explore"
 import ScheduleATour from "../components/Home/schedule-a-tour"
@@ -32,8 +32,8 @@ export default function Home() {
         <MainSection/>
         {/* Property Section */}
         <Property/>
-        {/* Our Property Amenities */}
-        <Amenities/>
+        {/* Our Property Services */}
+        <Services/>
         {/*Explore section  */}
         <Explore/>
         {/* Gallery section */}
