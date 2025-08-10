@@ -137,14 +137,12 @@
   background-image: url('../../public/main-page-cover.png');
   background-size: cover;
   background-position: center;
-  height: 120vh;
 }
 
 .gallery {
   background-image: url('../../public/gallery1.png');
   background-size: cover;
   background-position: center;
-  height: 95vh;
   position: relative;
 }
 
@@ -162,29 +160,10 @@
 
 .content {
   position: absolute;
-  top: 15%;
+  top: 5%;
   left: 50%;
   transform: translateX(-50%);
   z-index: 2;
-}
-
-.gallery-main-video {
-  position: absolute;
-  border: 15px solid #FFF;
-  border-radius: 5px;
-  top: 50%;
-  right: 50%;
-  transform: translate(50%,-30%);
-  z-index: 3;
-}
-
-@media screen and (max-width: 1279px) {
-  .gallery-main-video {
-    border: 10px solid #FFF;
-    top: 65%;
-    right: 50%;
-    transform: translate(50%,-30%);
-  }
 }
 
 .iti__dropdown-content {

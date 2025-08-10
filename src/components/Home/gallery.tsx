@@ -1,20 +1,20 @@
-import Image from "next/image";
+// import Image from "next/image";
 
 export default function Gallery() {
   return (
     <>
-    <section id="gallery" className="mb-20 md:mb-50 lg:mb-50 xl:mb-0">
+    <section id="gallery" className="mb-20">
       <div className="relative">
-        <div className="gallery py-4">
+        <div className="gallery h-[80vh] lg:h-[105vh] py-4">
           <div className="content text-white text-center">
             <p className="bg-gray-200/60 text-[#14453D] uppercase text-center text-md lg:text-base inline-block p-2 rounded-3xl w-fit">
               Building Gallery
             </p>
-            <h1 className="text-2xl md:text-4xl font-bold mb-5 mt-3">Residence Building View</h1>
+            <h1 className="text-2xl md:text-4xl font-bold mb-0 lg:mb-5 mt-3">Residence Building View</h1>
           </div>
         </div>
         
-        <video width="1020" height="640" className="gallery-main-video" autoPlay playsInline  >
+        <video width="1020" height="640" className=" absolute top-[45%] lg:top-[25%] left-1/2 -translate-x-1/2 z-2 border-[20px] border-white rounded-4xl" autoPlay playsInline  >
           <source src="/real-estate.mp4" type="video/mp4" />
           <track
             src="/real-estate.mp4"
@@ -24,16 +24,6 @@ export default function Gallery() {
           />
           Your browser does not support the video tag.
       </video>
-
-        <div className="lines h-[0] xl:h-[380px] relative">
-          <Image
-            className="hidden xl:block absolute right-40 bottom-10"
-            width={600}
-            height={600}
-            src="/lines.png"
-            alt="Image"
-          />
-        </div>
       </div>
     </section>
     </>

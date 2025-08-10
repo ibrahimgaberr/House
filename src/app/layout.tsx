@@ -1,20 +1,28 @@
 import type { Metadata } from "next";
-import { Figtree } from "next/font/google";
-import 'intl-tel-input/build/css/intlTelInput.css';
+import { Montserrat } from "next/font/google";
+import "intl-tel-input/build/css/intlTelInput.css";
 import "./globals.css";
 import SharedLayout from "@/components/layout/sharedLayout";
 
-
-
-const figtree = Figtree({
-  weight: ['400', '700'], 
-  subsets: ['latin'],
-  display: 'swap',
+const montserrat = Montserrat({
+  weight: ["300", "400", "700"],
+  subsets: ["latin"],
+  display: "swap",
 });
 
 export const metadata: Metadata = {
-  title: "House",
-  description: "House is a platform for managing your home and connecting with service providers.",
+  title: "Ajaza Compound | Elsewhere Real Estate",
+  description:
+    "Ajaza Compound by Elsewhere — a luxury residential community offering modern architecture, lush green spaces, and premium amenities in a prime location.",
+  keywords: [
+    "Ajaza Compound",
+    "Elsewhere Real Estate",
+    "Luxury Apartments",
+    "Residential Compound",
+    "Modern Living",
+    "New Developments",
+    "Premium Real Estate",
+  ],
 };
 
 export default function RootLayout({
@@ -22,13 +30,10 @@ export default function RootLayout({
 }: Readonly<{
   children: React.ReactNode;
 }>) {
-
   return (
-    <html lang="en" suppressHydrationWarning={true}>
-      <body  className={figtree.className}>
-        <SharedLayout>
-        {children}
-        </SharedLayout>
+    <html lang="en" suppressHydrationWarning>
+      <body suppressHydrationWarning className={montserrat.className}>
+        <SharedLayout>{children}</SharedLayout>
       </body>
     </html>
   );

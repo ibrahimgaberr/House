@@ -1,18 +1,16 @@
-
-import { Button } from "@/components/ui/button";
+// import { Button } from "@/components/ui/button";
 import Link from "next/link";
-
 
 type OurButtnonProps = {
   name: string;
-  pathLink: string
-}
+  pathLink: string;
+};
 export default function OurButton(props: OurButtnonProps) {
-  const { name, pathLink} = props
+  const { name, pathLink } = props;
   return (
     <>
       <div className=" flex justify-center lg:justify-start">
-        <Button
+        {/* <Button
           className="relative z-1 rounded-4xl bg-gray-200 leading-3.5
                text-black text-lg border-0 py-6 my-2 cursor-pointer hover:text-white
               after:content-[''] after:absolute after:h-10 after:w-10 after:inline-block after:rounded-full after:transition-all 
@@ -21,7 +19,10 @@ export default function OurButton(props: OurButtnonProps) {
               "
         >
           <Link href={pathLink}>{name}</Link>
-        </Button>
+        </Button> */}
+        <button className="p-[15px] font-bold text-md group rounded-4xl text-white bg-[#14453D] border-0 cursor-pointer">
+          <Link href={pathLink}>{name}</Link>
+        </button>
       </div>
     </>
   );

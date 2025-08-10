@@ -1,17 +1,27 @@
 "use client";
 import Image from "next/image";
 import Link from "next/link";
-import { Search, MailPlus, Menu, CircleX } from "lucide-react";
+import { MailPlus, Menu, CircleX } from "lucide-react";
 import { useState, useEffect } from "react";
 import { usePathname } from "next/navigation";
+import { useRouter } from 'next/navigation';
+
 
 export default function Navbar() {
   const pathname = usePathname();
+  const router = useRouter();
   const [isScrolled, setIsScrolled] = useState(false);
-  const [checkTheTopSpace, setCheckTheTopSpace] = useState(false);
   const [collapse, setCollapse] = useState(false);
   const [openCollapse, setOpenCollapse] = useState(false);
-  const [activeSection, setActiveSection] = useState<string>(""); 
+
+   const bookNowBtn = () => {
+    if(pathname === "/")
+    {
+      window.scrollTo({ top: 0, behavior: 'smooth' })
+    }else {
+      router.push("/");
+    }
+  }
 
   function openNavbarMenu() {
     if (openCollapse) {
@@ -24,16 +34,13 @@ export default function Navbar() {
   useEffect(() => {
     const handleScroll = () =>
       window.scrollY > 10 ? setIsScrolled(true) : setIsScrolled(false);
-    const CheckTopSpace = () =>
-      window.scrollY > 600 ? setCheckTheTopSpace(true) : setCheckTheTopSpace(false); 
     const handleResize = () =>
-      window.innerWidth <= 1023 ? setCollapse(true) : setCollapse(false);
+      window.innerWidth <= 1060 ? setCollapse(true) : setCollapse(false);
 
     handleResize();
     
     if (typeof window !== "undefined") {
       window.addEventListener("scroll", handleScroll);
-      window.addEventListener("scroll", CheckTopSpace);
       window.addEventListener("resize", handleResize);    
     }
     
@@ -52,7 +59,8 @@ export default function Navbar() {
       >
         <div className="ml-5">
           <Link href="/"> 
-              <Image width={150} height={50} src="/nav-logo.png" alt="Logo" />
+              {/* <Image width={150} height={50} src="/nav-logo.png" alt="Logo" /> */}
+              <p className="font-bold text-xl text-[#14453D]">,elsewhere</p>
           </Link>
         </div>
 
@@ -64,56 +72,35 @@ export default function Navbar() {
           <>
             <div className="font-bold text-xl">
               <ul className="flex justify-around items-center">
-                <li className={`mr-5 ${pathname === "/about" ? "text-[#DEC778]" : ""}`} 
+                <li className={`mr-5 ${pathname === "/about" ? "text-[#14453D]" : ""}`} 
                 >
                   <Link href="/about">About Us</Link>
                 </li>
-                <li className={`mr-5 ${pathname === "/contact" ? "text-[#DEC778]" : ""}`} 
-                >
-                  <Link href="/contact">Contact Us</Link>
-                </li>
-                <li className={`mr-5 ${pathname === "/apartment" ? "text-[#DEC778]" : ""}`} 
+                <li className={`mr-5 ${pathname === "/apartment" ? "text-[#14453D]" : ""}`} 
                 >
                   <Link href="/apartment">Apartment</Link>
                 </li>
-                <li className={`mr-5 ${pathname === "/news" ? "text-[#DEC778]" : ""}`} 
+                <li className={`mr-5 ${pathname === "/news" ? "text-[#14453D]" : ""}`} 
                 >
                   <Link href="/news">News</Link>
                 </li>
-                <li className={`${activeSection === "gallery" && checkTheTopSpace ? "text-[#DEC778]" : ""}`} 
-                onClick={() => setActiveSection("gallery")}
+                <li className={`mr-5 ${pathname === "/careers" ? "text-[#14453D]" : ""}`} 
                 >
-                  <Link href="#gallery">Gallery</Link>
+                  <Link href="/careers">Careers</Link>
+                </li>
+                <li className={`mr-5 ${pathname === "/contact" ? "text-[#14453D]" : ""}`} 
+                >
+                  <Link href="/contact">Contact Us</Link>
                 </li>
               </ul>
             </div>
-            <div className="flex">
-              <div className="search mr-5 flex items-center">
-                <Search /> <div className="inline-block w-[2px] h-[25px] bg-[rgb(148,147,147)] ml-[8px]"></div>
-              </div>
-              <div className="mr-5">
-                <ul className="flex items-center">
-                  <li className="mr-3">
-                    <Image
-                      width={20}
-                      height={20}
-                      src="/facebook-icon.svg"
-                      alt="facebbok"
-                    />
-                  </li>
-                  <li className="mr-3">
-                    <MailPlus />
-                  </li>
-                  <li className="mr-3">
-                    <Image
-                      width={20}
-                      height={20}
-                      src="/linkedin-icon.svg"
-                      alt="linkedin"
-                    />
-                  </li>
-                </ul>
-              </div>
+            <div>
+              <button
+              onClick={bookNowBtn}
+              className="p-[10px] font-bold text-md group rounded-4xl text-white bg-[#14453D] border-0 cursor-pointer"
+              >
+                Book Now
+              </button>
             </div>
           </>
         )}
@@ -146,13 +133,6 @@ export default function Navbar() {
             >
               <Link href="/about">About Us</Link>
             </li>
-            <li
-              onClick={() => {
-                setOpenCollapse(false);
-              }}
-            >
-              <Link href="/contact">Contact Us</Link>
-            </li>
               <li 
               onClick={() => {
               setOpenCollapse(false);
@@ -167,20 +147,20 @@ export default function Navbar() {
               >
                 <Link href="/news">News</Link>
               </li>
-            <li
+              <li 
               onClick={() => {
-                setOpenCollapse(false);
-              }}
-            >
-              <Link href="#gallery">Gallery</Link>
-            </li>
-            <li
-              onClick={() => {
-                setOpenCollapse(false);
-              }}
-            >
-              <Link href="#schedule">Schedule A Tour</Link>
-            </li>
+              setOpenCollapse(false);
+                }} 
+              >
+                <Link href="/careers">Careers</Link>
+              </li>
+              <li
+                onClick={() => {
+                  setOpenCollapse(false);
+                }}
+              >
+                <Link href="/contact">Contact Us</Link>
+              </li>
           </ul>
         </div>
         <div className="flex flex-col justify-center items-center">

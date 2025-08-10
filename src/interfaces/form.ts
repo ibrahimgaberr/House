@@ -18,3 +18,10 @@ export interface NewsSendMessage {
     phone: string,
     message: string,
 }
+export interface ApplyNow {
+    fullName: string,
+    phone: string,
+    email: string,
+    uploadCv: File | null,
+    message: string,
+}

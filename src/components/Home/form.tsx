@@ -1,11 +1,9 @@
 "use client";
-import { Button } from "@/components/ui/button";
+
 import { Input } from "@/components/ui/input";
-import { MoveUpRight } from "lucide-react";
 import { Textarea } from "@/components/ui/textarea";
 import "react-phone-number-input/style.css";
 import PhoneInput from "react-phone-number-input";
-import Swal from "sweetalert2";
 import { useFormik } from "formik";
 import * as Yup from "yup";
 import { parsePhoneNumberFromString } from "libphonenumber-js";
@@ -35,7 +33,9 @@ export default function EnquiryForm() {
     message: Yup.string().optional(),
   });
 
-  function handleSubmit(formValues: FormValues, { resetForm }: import("formik").FormikHelpers<FormValues>) {
+  async function handleSubmit(formValues: FormValues, { resetForm }: import("formik").FormikHelpers<FormValues>) {
+  
+    const Swal = (await import("sweetalert2")).default;
 
     Swal.fire({
       position: "center",
@@ -81,7 +81,7 @@ export default function EnquiryForm() {
 
   return (
     <>
-      <section className="form bg-gray-300/90 p-5 rounded-3xl">
+      <section className="form bg-gray-300/90 p-5 mt-5 rounded-3xl">
         <h3 className="text-xl font-bold py-2">Make An Enquiry</h3>
         <form onSubmit={formik.handleSubmit}>
           <Input
@@ -129,6 +129,7 @@ export default function EnquiryForm() {
             <option value="" disabled>
               Select You Option
             </option>
+            <option value="1room">1 Room</option>
             <option value="2rooms">2 Rooms</option>
             <option value="3rooms">3 Rooms</option>
             <option value="4rooms">4 Rooms </option>
@@ -149,19 +150,13 @@ export default function EnquiryForm() {
             className="my-4 flex h-10 w-full rounded-md border border-input bg-background px-3 py-2 text-sm ring-offset-background file:border-0 file:bg-transparent file:text-sm file:font-medium placeholder:text-muted-foreground focus-visible:outline-none focus-visible:ring-2 focus-visible:ring-ring focus-visible:ring-offset-2 disabled:cursor-not-allowed disabled:opacity-50"
             placeholder="Your Message*"
           />
-          <div className="text-right">
-            <Button
+          <div className="text-left">
+            <button
               type="submit"
-              className="p-[15px] lg:p-[25px] font-bold text-lg group rounded-4xl text-white bg-sky-700 border-0 cursor-pointer"
-              variant="outline"
+              className="p-[10px] font-bold text-lg rounded-4xl text-white bg-[#14453D] border-0 cursor-pointer"
             >
-              Submit Now{" "}
-              <MoveUpRight
-                size={32}
-                strokeWidth={2.75}
-                className="ml-2 transition-transform duration-300 group-hover:rotate-45"
-              />
-            </Button>
+              Book Now{" "}
+            </button>
           </div>
         </form>
       </section>

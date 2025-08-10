@@ -1,10 +1,9 @@
 export const servciesData = [
     {
         "id": 1,
-        "index":"01",
         "imgURl": "/image-landing-circle.png",
-        "title": "New Construction",
-        "description": "Discover the epitome of luxury living ar Luxury every details"
+        "title": "public parking",
+        "description": "Spacious and secure parking areas available for residents and guests."
     },
     {
         "id": 2,
@@ -24,9 +23,33 @@ export const servciesData = [
         "id": 4,
         "index":"04",
         "imgURl": "/image-landing-circle.png",
-        "title": "Eco Construction",
-        "description": "Step into sophistication and serenity at new construction."
-    }
+        "title": "Malls & Retail Shops",
+        "description": "A variety of shops and malls inside the compound for all daily needs."
+    },
+    {
+        "id": 5,
+        "imgURl": "/image-landing-circle.png",
+        "title": "Hospitals & Clinics",
+        "description": "Medical services inside the compound to care your family."
+    },
+    {
+        "id": 6,
+        "imgURl": "/image-landing-circle.png",
+        "title": "mosques",
+        "description": "Peaceful and nearby mosques for daily prayers within the compound."
+    },
+    {
+        "id": 7,
+        "imgURl": "/image-landing-circle.png",
+        "title": "schools & nurseries",
+        "description": "Quality education and care for your children just steps away from home."
+    },
+    {
+        "id": 8,
+        "imgURl": "/image-landing-circle.png",
+        "title": "Gym",
+        "description": "A fully equipped gym to help you stay active and healthy."
+    },
 ]
 
 export const exploreData = [
@@ -282,123 +305,189 @@ export const apartmentData = [
 
 export const newsData = [
   {
-    id:1,
-    name: 'Joe Root',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
+    id: 1,
+    name: "Ajaza Team",
+    title: "Ajaza Compound Officially Launched!",
+    date: "15 June, 2025",
     images: {
       imgURL: '/news/blog-img1.png'
     },
-    length: 12
+    subTitle: "A New Standard of Luxury in New Alamein",
+    subTitleParagraph: "Ajaza introduces a unique living experience where elegance meets coastal charm in the heart of New Alamein.",
+    paragraph1: "Ajaza Compound is now officially launched, bringing a new vision of premium coastal living to New Alamein.",
+    paragraph2: "From unique architectural design to luxury amenities, the project sets a high bar for modern development in Egypt’s North Coast."
+  },
+  {
+    id: 2,
+    name: "Construction Team",
+    title: "Phase 1 Foundation Completed",
+    date: "1 July, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "Construction Progress Moving Ahead of Schedule",
+    subTitleParagraph: "Our construction efforts continue at full speed, ensuring we stay ahead of our delivery targets.",
+    paragraph1: "We’re proud to announce that the foundation work for Phase 1 has been successfully completed.",
+    paragraph2: "This milestone reflects our commitment to delivering on time, with strict quality and safety standards."
+  },
+  {
+    id: 3,
+    name: "Sales Team",
+    title: "New 8-Year Installment Plan Announced",
+    date: "10 July, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "Flexible Payment Plans for Every Buyer",
+    subTitleParagraph: "We believe in affordability without compromise—our 8-year plans are tailored to every lifestyle.",
+    paragraph1: "Ajaza now offers an 8-year installment plan designed to suit a wide range of buyers and investors.",
+    paragraph2: "With zero interest and tailored payment options, owning a luxury unit has never been easier."
+  },
+  {
+    id: 4,
+    name: "Ajaza Team",
+    title: "Model Villas Now Open for Tours",
+    date: "25 July, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "Step Inside Your Future Home",
+    subTitleParagraph: "Get a firsthand experience of what your life could look like at Ajaza—timeless design, modern comforts.",
+    paragraph1: "Our fully furnished model villas are now open for public tours every day of the week.",
+    paragraph2: "Come experience the space, design, and elegance that define Ajaza living."
+  },
+  {
+    id: 5,
+    name: "Events Team",
+    title: "Join Us at Ajaza Summer Open House!",
+    date: "1 August, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "A Weekend of Fun, Food, and Real Estate",
+    subTitleParagraph: "This summer, explore Ajaza while enjoying food, live music, and family-friendly activities.",
+    paragraph1: "The Ajaza Open House event will feature guided tours, live entertainment, and exclusive summer offers.",
+    paragraph2: "Bring your family and explore what makes Ajaza the most anticipated destination on the coast."
+  },
+  {
+    id: 6,
+    name: "PR Department",
+    title: "Ajaza Featured in Al-Ahram Newspaper",
+    date: "30 July, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "National Recognition for a Visionary Project",
+    subTitleParagraph: "Ajaza's inclusion in Al-Ahram highlights our innovative approach and rising national profile.",
+    paragraph1: "Ajaza has been featured in Al-Ahram, one of Egypt’s top newspapers, highlighting its architectural innovation and strategic location.",
+    paragraph2: "This recognition reflects our growing presence and credibility in the real estate industry."
+  },
+  {
+    id: 7,
+    name: "Ajaza Management",
+    title: "Delivery Date Set for Phase 1: Jan 2026",
+    date: "2 August, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "We’re on Track for a Timely Handover",
+    subTitleParagraph: "With excellent project management and skilled teams, we’re confident in meeting all delivery commitments.",
+    paragraph1: "Mark your calendars! Phase 1 will be delivered in January 2026 as promised.",
+    paragraph2: "Our construction teams are working efficiently to ensure a smooth handover of all units with no delays."
+  },
+  {
+    id: 8,
+    name: "Marketing Team",
+    title: "Ajaza Releases Official Master Plan",
+    date: "5 August, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "Your Full Guide to the Ajaza Lifestyle",
+    subTitleParagraph: "The master plan outlines the thoughtfully designed infrastructure that supports a balanced, luxurious lifestyle.",
+    paragraph1: "We’ve released the official master plan showcasing all residential zones, green areas, and community services.",
+    paragraph2: "It’s a complete overview of Ajaza’s layout and the seamless flow of life we aim to provide."
+  },
+  {
+    id: 9,
+    name: "Sales Team",
+    title: "Limited Units Left in Phase 1 — Reserve Now",
+    date: "6 August, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "High Demand, Few Units Remaining",
+    subTitleParagraph: "With demand soaring, now is the best time to act and reserve before prices adjust again.",
+    paragraph1: "Due to overwhelming interest, only a limited number of units remain in Phase 1.",
+    paragraph2: "Act now to secure your place in Ajaza before the next pricing wave."
+  },
+  {
+    id: 10,
+    name: "Ajaza Team",
+    title: "Watch Our Latest Promo Video for Ajaza",
+    date: "6 August, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "Experience the Vision Behind Ajaza",
+    subTitleParagraph: "Our new promotional video offers an immersive preview into the soul of Ajaza Compound.",
+    paragraph1: "We’ve launched a new promo video that captures the essence of Ajaza’s design and lifestyle.",
+    paragraph2: "Watch it now to see what makes Ajaza more than just a compound—it’s a living experience."
+  },
+  {
+    id: 11,
+    name: "Ajaza Team",
+    title: "Smart Home Features Now Included in All Villas",
+    date: "6 August, 2025",
+    images: {
+      imgURL: '/news/blog-img1.png'
+    },
+    subTitle: "Innovation Comes Standard at Ajaza",
+    subTitleParagraph: "Modern technology now comes pre-installed in every villa, enhancing comfort and control.",
+    paragraph1: "Every villa at Ajaza now comes equipped with smart home systems for lighting, security, and climate control.",
+    paragraph2: "We’re raising the bar for modern living by integrating technology into every home."
+  }
+];
+
+export const careersData = [
+  {
+    id:1,
+    title: "Management",
+    description: `We are seeking a highly organized and detail-oriented Administrative Officer to join our team at 
+    ,Elsewhere. The ideal candidate will be responsible for a wide range of administrative and executive support tasks,
+    ensuring the smooth and efficient operation of our office. You will be a key point of contact for internal and 
+    external stakeholders, handling communications, managing schedules, and maintaining a professional office environment..`
   },
   {
     id:2,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
+    title: "Full-Stack Software Developer",
+    description: `We're seeking a skilled and passionate Full-Stack Software Developer to join our innovative team at
+    ,Elsewhere. The ideal candidate will have a strong command of both front-end and back-end technologies, with a proven 
+    track record of developing robust and scalable web applications. You'll play a crucial role in designing, developing, 
+    and deploying software solutions that drive our business forward.`
   },
   {
     id:3,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
+    title: "Media Buyer",
+    description: `At Elsewhere, we don’t just buy media—we craft audience experiences. We’re seeking a Media Buyer with a 
+    knack for turning data into actionable strategies and budgets into high-impact campaigns. If you thrive at the 
+    intersection of creativity and analytics, and you’re obsessed with optimizing every dollar for maximum ROI, you’ll 
+    fit right into our team of forward-thinking marketers.`
   },
   {
     id:4,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
+    title: "Sales Manager",
+    description: `At Elsewhere, we don't just meet sales targets - we create markets. We're seeking a Sales Manager who 
+    combines strategic vision with operational excellence to lead our sales team into new frontiers. As the architect of
+    our revenue engine, you'll transform ambitious goals into actionable plans while fostering a high-performance culture.`
   },
   {
     id:5,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
+    title: "Office Boy",
+    description: `At Elsewhere, every team member plays a vital role in keeping our workplace running smoothly. We’re 
+    looking for a reliable and energetic Office Assistant to be the backbone of our daily operations. This isn’t just 
+    about tasks—it’s about creating an organized, welcoming environment where creativity thrives.`
   },
-  {
-    id:6,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
-  },
-  {
-    id:7,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
-  },
-  {
-    id:8,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
-  },
-  {
-    id:9,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
-  },
-  {
-    id:10,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
-  },
-  {
-    id:11,
-    name: 'Joe Doe',
-    title: 'Luxury Suite Villa',
-    date: '16 April, 2024',
-    images: {
-      imgURL: '/news/blog-img1.png'
-    },
-    length: 12
-  },
-  // {
-  //   id:11,
-  //   name: 'Joe Doe',
-  //   title: 'Luxury Suite Villa',
-  //   date: '16 April, 2024',
-  //   images: {
-  //     imgURL: '/news/blog-img1.png'
-  //   },
-  //   length: 12
-  // },
 ]
+
+
