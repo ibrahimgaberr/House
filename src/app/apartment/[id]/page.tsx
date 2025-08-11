@@ -7,6 +7,13 @@ import {
 import Image from "next/image";
 import Link from "next/link";
 import { BedDouble, Bath } from "lucide-react";
+import { use } from "react";
+
+interface PageProps {
+  params: Promise<{
+    id: string;
+  }>;
+}
 
 const allRooms = [
   ...typeARoom1,
@@ -23,9 +30,9 @@ const allRooms = [
   ...typeDRoom4
 ];
 
-export default function ApartmentDetails({ params }: { params: { id: string } }) {
-  const id = parseInt(params.id);
-  const apartment = allRooms.find(room => room.id === id);
+export default function ApartmentDetails({ params }: PageProps) {
+  const { id } = use(params);
+  const apartment = allRooms.find(room => room.id === +id);
 
   if (!apartment) {
     return (
