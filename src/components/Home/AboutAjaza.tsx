@@ -10,10 +10,10 @@ export default function AboutAjaza() {
           <div className="flex flex-col lg:flex-row items-center gap-16">
             <div data-aos="fade-right" className="w-full lg:w-1/2 relative lg:h-[500px]">
               <div className="mb-4 flex justify-center lg:justify-start">
-                <Image width={400} height={440} src="/house1.png" alt="House" />
+                <Image width={400} height={440} className="rounded-4xl" src="/house1.png" alt="House" />
               </div>
               <div className="hidden xl:block absolute -top-10 left-30">
-                <Image width={400} height={440} src="/house2.png" alt="House" />
+                <Image width={400} height={440} className="rounded-4xl" src="/house2.png" alt="House" />
               </div>
             </div>
             <div data-aos="fade-left" className="text-center lg:text-left w-full lg:w-1/2 lg:flex lg:flex-col lg:justify-center lg:h-[500px]">

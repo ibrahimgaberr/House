@@ -2,7 +2,7 @@ import { newsData } from "@/data/data";
 import MainSection from "../layout/mainSection";
 import Image from "next/image";
 import Link from "next/link";
-import { UserRound, CalendarDays, MoveUpRight } from "lucide-react";
+import { UserRound, CalendarDays } from "lucide-react";
 
 export default function MainNews() {
   console.log(newsData)
@@ -50,16 +50,6 @@ export default function MainNews() {
                           <h3 className="text-lg font-medium mt-4">
                             {item.title}
                           </h3>
-                          <Link
-                            href={`/news/${item.id}`}
-                            aria-label={`Read more about ${item.title}`}
-                            className="flex items-center mt-4 transition-all transition-duration-300 hover:text-[#DEC778] font-semibold cursor-pointer"
-                          >
-                            <p className="mr-2">Read More</p>
-                            <span>
-                              <MoveUpRight size={18} strokeWidth={1.75} />
-                            </span>
-                          </Link>
                         </div>
                       </div>
                   </Link>

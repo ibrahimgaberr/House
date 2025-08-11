@@ -1,16 +1,13 @@
 "use client";
+import AosInitializer from "@/components/Home/AOSInitializer";
 import MainNews from "@/components/news/mainNews";
 import ScrollToTop from "@/components/scrolltotop";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 
 export default function News() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+
   return (
     <>
+      <AosInitializer />
       <div>
         {/* Main About Section */}
         <MainNews />

@@ -24,6 +24,7 @@ export default function MainAboutSection() {
                     width={400}
                     height={440}
                     src="/house1.png"
+                    className="rounded-4xl"
                     alt="House"
                   />
                 </div>
@@ -31,6 +32,7 @@ export default function MainAboutSection() {
                   <Image
                     width={400}
                     height={440}
+                    className="rounded-4xl"
                     src="/about/property-img13.png"
                     alt="House"
                     data-aos="fade-right"
@@ -131,7 +133,7 @@ in Al Alamein.
                   <Image
                     width={400}
                     height={440}
-                    className="rounded-3xl"
+                    className="rounded-4xl"
                     src="/about/about-img1.png"
                     alt="House"
                     data-aos="fade-left"
@@ -143,7 +145,7 @@ in Al Alamein.
                   <Image
                     width={400}
                     height={440}
-                    className="rounded-3xl"
+                    className="rounded-4xl"
                     src="/about/about-img2.png"
                     alt="House"
                     data-aos="fade-left"
@@ -154,7 +156,7 @@ in Al Alamein.
 
                 <div className="hidden lg:block lines absolute top-[-11%] left-0 z-[-1]">
                   <Image
-                    className="block"
+                    className="block rounded-4xl"
                     width={50}
                     height={50}
                     src="/about/elements12.png"

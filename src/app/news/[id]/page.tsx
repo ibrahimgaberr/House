@@ -4,11 +4,9 @@ import MainSection from "@/components/layout/mainSection";
 import { newsData } from "@/data/data";
 import Image from "next/image";
 import { UserRound, CalendarDays, MoveUpRight } from "lucide-react";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 import SendMessage from "@/components/sendMessageForm/sendMessageForm";
 import Link from "next/link";
+import AosInitializer from "@/components/Home/AOSInitializer";
 
 interface PageProps {
   params: Promise<{
@@ -20,16 +18,15 @@ export default function NewsDetails({ params }: PageProps) {
   const { id } = use(params);
   const newsItem = newsData.find((item) => item.id === parseInt(id));
   const latestNews = newsData.slice(0, 3);
-  useEffect(() => {
-    AOS.init();
-  }, []);
+
   return (
     <>
+      <AosInitializer />
       <MainSection name="News" showDetails="News Details" />
       <div className="w-full xl:w-[70%] mx-auto">
         <div className="p-3 md:p-10 flex flex-col items-center justify-center">
           <Image
-            className="rounded-2xl mb-2"
+            className="rounded-4xl mb-2"
             width={500}
             height={400}
             src={newsItem!.images.imgURL}
@@ -62,14 +59,14 @@ export default function NewsDetails({ params }: PageProps) {
           </div>
           <div className="flex flex-col md:flex-row justify-center items-center mt-5 gap-4">
             <Image
-              className="rounded-2xl mb-2"
+              className="rounded-4xl mb-2"
               width={300}
               height={300}
               src={newsItem!.images.imgURL}
               alt="Image"
             />
             <Image
-              className="rounded-2xl mb-2"
+              className="rounded-4xl mb-2"
               width={300}
               height={300}
               src={newsItem!.images.imgURL}
@@ -101,7 +98,7 @@ export default function NewsDetails({ params }: PageProps) {
               {/* Image with overlay container */}
 
               <Image
-                className="rounded-2xl w-full"
+                className="rounded-4xl w-full"
                 width={600}
                 height={600}
                 src={news!.images.imgURL}

@@ -1,7 +1,7 @@
 import Image from 'next/image';
 import MainSection from '@/components/layout/mainSection';
 
-export default function elsewhere () {
+export default function elsewhere() {
     return (
         <>
             <section id="elsewhere">
@@ -22,7 +22,7 @@ export default function elsewhere () {
                             head turner.</p>
                     </div>
                     <div>
-                        <Image className='rounded-3xl' width={400} height={400} src="/house1.png" alt="elsewhere" />
+                        <Image className='rounded-4xl' width={400} height={400} src="/house1.png" alt="elsewhere" />
                     </div>
                 </div>
             </section>

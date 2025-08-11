@@ -72,23 +72,23 @@ export default function Navbar() {
           <>
             <div className="font-bold text-xl">
               <ul className="flex justify-around items-center">
-                <li className={`mr-5 ${pathname === "/about" ? "text-[#14453D]" : ""}`} 
+                <li className={`mr-5 ${pathname.includes("/about") ? "text-[#14453D]" : ""}`} 
                 >
                   <Link href="/about">About Us</Link>
                 </li>
-                <li className={`mr-5 ${pathname === "/apartment" ? "text-[#14453D]" : ""}`} 
+                <li className={`mr-5 ${pathname.includes("/apartment") ? "text-[#14453D]" : ""}`} 
                 >
                   <Link href="/apartment">Apartment</Link>
                 </li>
-                <li className={`mr-5 ${pathname === "/news" ? "text-[#14453D]" : ""}`} 
+                <li className = {`mr-5 ${pathname.includes("/news") ? "text-[#14453D]" : ""}` }
                 >
                   <Link href="/news">News</Link>
                 </li>
-                <li className={`mr-5 ${pathname === "/careers" ? "text-[#14453D]" : ""}`} 
+                <li className={`mr-5 ${pathname.includes("/careers") ? "text-[#14453D]" : ""}`} 
                 >
                   <Link href="/careers">Careers</Link>
                 </li>
-                <li className={`mr-5 ${pathname === "/contact" ? "text-[#14453D]" : ""}`} 
+                <li className={`mr-5 ${pathname.includes("/contact") ? "text-[#14453D]" : ""}`} 
                 >
                   <Link href="/contact">Contact Us</Link>
                 </li>

@@ -1,16 +1,12 @@
-"use client";
 import MainContact from "@/components/Contact/mainContact";
+import AosInitializer from "@/components/Home/AOSInitializer";
 import ScrollToTop from "@/components/scrolltotop";
-import AOS from "aos";
-import "aos/dist/aos.css";
-import { useEffect } from "react";
 
 export default function ContactUs() {
-  useEffect(() => {
-    AOS.init();
-  }, []);
+
   return (
     <>
+      <AosInitializer />
       <div>
         {/* Main About Section */}
         <MainContact />

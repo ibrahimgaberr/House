@@ -1,101 +1,3 @@
-// import Image from "next/image";
-// import Link from "next/link";
-// import { MailPlus, MapPin, Phone } from "lucide-react";
-
-// export default function Footer() {
-//   return (
-//     <>
-//       <footer className="p-8 bg-black w-[100%] text-white ">
-//         <div
-//           className="container flex flex-col lg:flex-row justify-between items-center relative after:content-[''] after:block after:w-[80%] 
-//                 after:h-[1px] after:bg-gray-300 after:absolute after:left-1/2 after:-translate-x-1/2 after:bottom-[-20px]"
-//         >
-//           <div className="img mb-5 lg:mb-0">
-//             <Link href="/">
-//               {/* <Image width={150} height={50} src="/nav-logo.png" alt="Logo" /> */}
-//               <p className="font-bold text-xl">,elsewhere</p>
-//             </Link>
-//           </div>
-//           <div className="list mb-5">
-//             <h1 className="font-bold text-[20px] text-center lg:text-left mb-2">
-//               Links:
-//             </h1>
-//             <div className="flex gap-20">
-//               <ul className="flex flex-col items-center text-lg font-bold">
-//                 <li className="mb-3 hover:text-[#14453D]">
-//                   <Link href="/about">About Us</Link>
-//                 </li>
-//                 <li className="mb-3 hover:text-[#14453D]">
-//                   <Link href="/apartment">Apartment</Link>
-//                 </li>
-//                 <li className="mb-3 hover:text-[#14453D]">
-//                   <Link href="/careers">Careers</Link>
-//                 </li>
-//               </ul>
-//               <ul className="flex flex-col items-center text-lg font-bold">
-//                 <li className="mb-3 hover:text-[#14453D]">
-//                   <Link href="/news">News</Link>
-//                 </li>
-//                 <li className="mb-3 hover:text-[#14453D]">
-//                   <Link href="/contact">Contact Us</Link>
-//                 </li>
-//               </ul>
-//             </div>
-//           </div>
-//           <div className="contact flex flex-col items-center text-lg font-bold mb-5 lg:mb-0">
-//             <p className="flex mb-5">
-//               <span className="mr-2">
-//                 <MapPin />
-//               </span>
-//               65, Brand Tower, New York, USA{" "}
-//             </p>
-//             <p className="flex">
-//               <span className="mr-2">
-//                 <Phone />
-//               </span>
-//               123-456-7890
-//             </p>
-//             <ul className="flex items-center mt-5">
-//               <li
-//                 className="mr-4 w-[50px] h-[50px] rounded-full cursor-pointer bg-gray-300 flex justify-center items-center 
-//                   hover:bg-[#14453D] transition-all duration-300"
-//               >
-//                 <Image
-//                   width={20}
-//                   height={20}
-//                   src="/facebook-icon.svg"
-//                   alt="facebbok"
-//                 />
-//               </li>
-//               <li
-//                 className="mr-4 w-[50px] h-[50px] rounded-full cursor-pointer bg-gray-300 flex justify-center items-center 
-//                   hover:bg-[#14453D] transition-all duration-300"
-//               >
-//                 <MailPlus className="text-black" />
-//               </li>
-//               <li
-//                 className="mr-4 w-[50px] h-[50px] rounded-full cursor-pointer bg-gray-300 flex justify-center items-center 
-//                   hover:bg-[#14453D] transition-all duration-300"
-//               >
-//                 <Image
-//                   width={20}
-//                   height={20}
-//                   src="/linkedin-icon.svg"
-//                   alt="linkedin"
-//                 />
-//               </li>
-//             </ul>
-//           </div>
-//         </div>
-//         <div className="copyright text-center mt-10 text-base text-white">
-//           <p>© 2024 House - Single Property HTML Template.</p>
-//         </div>
-//       </footer>
-//     </>
-//   );
-// }
-
-
 import Image from "next/image";
 import Link from "next/link";
 import { MailPlus, MapPin, Phone } from "lucide-react";
@@ -194,7 +96,7 @@ export default function Footer() {
 
       {/* Copyright */}
       <div className="text-center mt-4 text-sm text-gray-200 tracking-wide">
-        <p>© 2024 Elsewhere — Crafted with Elegance.</p>
+        <p>© 2025 Elsewhere — Crafted with Elegance.</p>
       </div>
     </footer>
   );
