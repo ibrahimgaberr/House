@@ -5,8 +5,6 @@ import Link from "next/link";
 import { UserRound, CalendarDays } from "lucide-react";
 
 export default function MainNews() {
-  console.log(newsData)
-
 
   return (
     <>
@@ -19,12 +17,12 @@ export default function MainNews() {
          <Link key={item.id} href={`/news/${item.id}`}>            
                         <div
                         
-                        className="relative rounded-2xl shadow-md hover:shadow-none"
+                        className="relative rounded-2xl shadow-md hover:shadow-lg"
                       >
                         {/* Image with overlay container */}
 
                         <Image
-                          className="rounded-2xl w-full h-64 md:h-auto object-cover"
+                          className="rounded-2xl w-full h-64 md:h-auto object-cover transition-all duration-300 hover:scale-103"
                           width={400}
                           height={400}
                           src={item.images.imgURL}
@@ -36,13 +34,13 @@ export default function MainNews() {
                           <div className="flex align-middle items-center space-x-3">
                             <div className="flex items-center">
                               <span className="mr-2">
-                                <UserRound size={20} strokeWidth={1.75} />
+                                <UserRound size={18} strokeWidth={1.75} />
                               </span>
-                              <p>{item.name}</p>
+                              <p className="text-sm">{item.name}</p>
                             </div>
                             <div className="flex items-center">
                               <span className="mr-2">
-                                <CalendarDays size={20} strokeWidth={1.75} />
+                                <CalendarDays size={18} strokeWidth={1.75} />
                               </span>
                               <p className="text-sm">{item.date}</p>
                             </div>

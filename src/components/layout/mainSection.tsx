@@ -14,8 +14,8 @@ export default function MainSection({ name, showDetails }: { name?: string; show
             <div className="pt-15">
             <h1 className="text-white  text-2xl md:text-6xl font-bold ">{ name }</h1>
             <p className="flex items-center gap-3 text-sm text-white font-bold">
-                <Link href="/">Home</Link> <ChevronRight size={28} strokeWidth={2.25} /> <Link href={`/${name?.toLowerCase()}`}>{name}</Link>
-                {showDetails && <span className="flex items-center"><ChevronRight size={28} strokeWidth={2.25} />
+                <Link href="/">Home</Link> <ChevronRight size={20} strokeWidth={2} /> <Link href={`/${name?.toLowerCase()}`}>{name}</Link>
+                {showDetails && <span className="flex items-center"><ChevronRight size={20} strokeWidth={2} />
                 {showDetails}</span>}
             </p>
             </div>

@@ -450,46 +450,72 @@ export const newsData = [
 ];
 
 export const careersData = [
-  {
-    id:1,
-    title: "Management",
-    description: `We are seeking a highly organized and detail-oriented Administrative Officer to join our team at 
-    ,Elsewhere. The ideal candidate will be responsible for a wide range of administrative and executive support tasks,
-    ensuring the smooth and efficient operation of our office. You will be a key point of contact for internal and 
-    external stakeholders, handling communications, managing schedules, and maintaining a professional office environment..`
-  },
-  {
-    id:2,
-    title: "Full-Stack Software Developer",
-    description: `We're seeking a skilled and passionate Full-Stack Software Developer to join our innovative team at
-    ,Elsewhere. The ideal candidate will have a strong command of both front-end and back-end technologies, with a proven 
-    track record of developing robust and scalable web applications. You'll play a crucial role in designing, developing, 
-    and deploying software solutions that drive our business forward.`
-  },
-  {
-    id:3,
-    title: "Media Buyer",
-    description: `At Elsewhere, we don’t just buy media—we craft audience experiences. We’re seeking a Media Buyer with a 
-    knack for turning data into actionable strategies and budgets into high-impact campaigns. If you thrive at the 
-    intersection of creativity and analytics, and you’re obsessed with optimizing every dollar for maximum ROI, you’ll 
-    fit right into our team of forward-thinking marketers.`
-  },
-  {
-    id:4,
-    title: "Sales Manager",
-    description: `At Elsewhere, we don't just meet sales targets - we create markets. We're seeking a Sales Manager who 
-    combines strategic vision with operational excellence to lead our sales team into new frontiers. As the architect of
-    our revenue engine, you'll transform ambitious goals into actionable plans while fostering a high-performance culture.`
-  },
-  {
-    id:5,
-    title: "Office Boy",
-    description: `At Elsewhere, every team member plays a vital role in keeping our workplace running smoothly. We’re 
-    looking for a reliable and energetic Office Assistant to be the backbone of our daily operations. This isn’t just 
-    about tasks—it’s about creating an organized, welcoming environment where creativity thrives.`
-  },
+{
+  id: 1,
+  title: "Management",
+  subDescription: "Lead with precision and keep our operations running seamlessly.",
+  description: `We are seeking a highly organized and detail-oriented Administrative Officer to join our team at Elsewhere. The ideal candidate will be responsible for a wide range of administrative and executive support tasks, ensuring the smooth and efficient operation of our office. You will be a key point of contact for internal and external stakeholders, handling communications, managing schedules, and maintaining a professional office environment.`,
+  requirements: [
+    "Bachelor’s degree in Business Administration or related field",
+    "3+ years of experience in administrative or management roles",
+    "Excellent communication and organizational skills",
+    "Proficiency in MS Office Suite and office management software",
+    "Ability to handle multiple tasks and prioritize effectively"
+  ]
+},
+{
+  id: 2,
+  title: "Full-Stack Software Developer",
+  subDescription: "Build, innovate, and deploy world-class digital solutions.",
+  description: `We're seeking a skilled and passionate Full-Stack Software Developer to join our innovative team at Elsewhere. The ideal candidate will have a strong command of both front-end and back-end technologies, with a proven track record of developing robust and scalable web applications. You'll play a crucial role in designing, developing, and deploying software solutions that drive our business forward.`,
+  requirements: [
+    "Bachelor’s degree in Computer Science or related field",
+    "Proficiency in JavaScript, React, Node.js, and databases (SQL/NoSQL)",
+    "Experience with RESTful APIs and cloud platforms",
+    "Strong problem-solving and debugging skills",
+    "Ability to work in an Agile development environment"
+  ]
+},
+{
+  id: 3,
+  title: "Media Buyer",
+  subDescription: "Turn data into powerful, high-impact marketing campaigns.",
+  description: `At Elsewhere, we don’t just buy media—we craft audience experiences. We’re seeking a Media Buyer with a knack for turning data into actionable strategies and budgets into high-impact campaigns. If you thrive at the intersection of creativity and analytics, and you’re obsessed with optimizing every dollar for maximum ROI, you’ll fit right into our team of forward-thinking marketers.`,
+  requirements: [
+    "Bachelor’s degree in Marketing, Communications, or related field",
+    "2+ years of experience in media buying or digital advertising",
+    "Strong analytical and negotiation skills",
+    "Proficiency in ad platforms like Google Ads and Meta Ads Manager",
+    "Ability to manage budgets and optimize campaigns for ROI"
+  ]
+},
+{
+  id: 4,
+  title: "Sales Manager",
+  subDescription: "Drive growth, inspire teams, and open new market frontiers.",
+  description: `At Elsewhere, we don't just meet sales targets - we create markets. We're seeking a Sales Manager who combines strategic vision with operational excellence to lead our sales team into new frontiers. As the architect of our revenue engine, you'll transform ambitious goals into actionable plans while fostering a high-performance culture.`,
+  requirements: [
+    "Bachelor’s degree in Sales, Marketing, or related field",
+    "5+ years of sales experience, with 2+ in a leadership role",
+    "Proven track record in meeting or exceeding sales targets",
+    "Strong leadership and motivational skills",
+    "Ability to develop and implement sales strategies"
+  ]
+},
+{
+  id: 5,
+  title: "Office Boy",
+  subDescription: "Support the team and keep our workplace running smoothly.",
+  description: `At Elsewhere, every team member plays a vital role in keeping our workplace running smoothly. We’re looking for a reliable and energetic Office Assistant to be the backbone of our daily operations. This isn’t just about tasks—it’s about creating an organized, welcoming environment where creativity thrives.`,
+  requirements: [
+    "High school diploma or equivalent",
+    "Prior experience in office support or maintenance (preferred)",
+    "Good communication and teamwork skills",
+    "Attention to detail and time management",
+    "Ability to handle basic cleaning and office organization tasks"
+  ]
+}
 ]
-
 
 export const typeARoom1 = [
   {
@@ -1948,4 +1974,151 @@ export const typeDRoom4 = [
       { name: "Terrace", description: "Terrace with panoramic views." }
     ]
   },
+];
+
+export const TypeA = [
+  {
+    id: 1,
+    title: 'TYPE A: Model 01 - 1 Bedroom',
+    imageUrl: '/apartment/typeamodel1.png',
+    rooms: [
+      {dining: 'Dining'},
+      {kitchen: 'Kitchen'},
+      {bedroom: '1 - Bedroom'},
+      {terrace: 'Terrace'},
+    ]
+  },
+  {
+    id: 2,
+    title: 'TYPE A: Model 02 - 2 Bedroom',
+    imageUrl: '/apartment/typeamodel2.png',
+    rooms: [
+      {entrance: 'Entrance'},
+      {bathroom: 'Bathroom'},
+      {kitchen: 'Kitchen'},
+      {dining: 'Dining'},
+      {terrace: '2x Terrace'},
+      {bedroom: '1 - Bedroom & Master Bedroom'},
+    ]
+  },
+  {
+    id: 3,
+    title: 'TYPE A: Model 03 - 3 Bedroom',
+    imageUrl: '/apartment/typeamodel3.png',
+    rooms: [
+      {entrance: 'Entrance'},
+      {guestToilet: 'Guest Toilet'},
+      {kitchen: 'Kitchen'},
+      {dining: 'Dining'},
+      {terrace: '3x Terrace'},
+      {bathroom: 'Bathroom'},
+      {bedroom: '2x Bedroom & 2x Master Bedroom'},
+      {dressing: 'Dressing Room'}
+    ]
+  },
+]
+export const TypeB = [
+  {
+    id: 1,
+    title: 'TYPE B: Model 01 - 1 Bedroom',
+    imageUrl: '/apartment/typebmodel1.png',
+    rooms: [
+      {dining: 'Dining'},
+      {kitchen: 'Kitchen'},
+      {bedroom: '1 - Bedroom'},
+      {terrace: 'Terrace'},
+    ]
+  },
+  {
+    id: 2,
+    title: 'TYPE B: Model 02 - 2 Bedroom',
+    imageUrl: '/apartment/typebmodel2.png',
+    rooms: [
+      {entrance: 'Entrance'},
+      {bathroom: 'Bathroom & Master Bathroom'},
+      {kitchen: 'Kitchen'},
+      {dining: 'Dining'},
+      {terrace: '2x Terrace'},
+      {bedroom: '2x Bedroom'},
+    ]
+  },
+  {
+    id: 3,
+    title: 'TYPE B: Model 03 - 3 Bedroom',
+    imageUrl: '/apartment/typebmodel3.png',
+    rooms: [
+      {entrance: 'Entrance'},
+      {guestToilet: 'Guest Toilet'},
+      {kitchen: 'Kitchen'},
+      {dining: 'Dining'},
+      {terrace: '2x Terrace'},
+      {bathroom: 'Bathroom & Master Bathroom'},
+      {bedroom: '2x Bedroom & Master Bedroom'},
+      {dressing: 'Master Dressing Room'}
+    ]
+  },
+]
+export const TypeC = [
+  {
+    id: 1,
+    title: 'TYPE C: Model 01 - 2 Bedroom',
+    imageUrl: '/apartment/typecmodel1.png',
+    rooms: [
+      {dining: 'Dining'},
+      {kitchen: 'Kitchen'},
+      {bedroom: '2x Bedroom'},
+      {bathroom: 'Bathroom & Master Bathroom'},
+      {terrace: '2x Terrace'},
+    ]
+  },
+  {
+    id: 2,
+    title: 'TYPE C: Model 02 - 3 Bedroom',
+    imageUrl: '/apartment/typecmodel2.png',
+    rooms: [
+      {dining: 'Dining'},
+      {kitchen: 'Kitchen'},
+      {bedroom: '3x Bedroom'},
+      {bathroom: 'Bathroom & Master Bathroom'},
+      {terrace: '2x Terrace'},
+    ]
+  },
+]
+export const TypeD = [
+  {
+    id: 1,
+    title: 'TYPE D: Model 01 - 2 Bedroom',
+    imageUrl: '/apartment/typedmodel1.png',
+    rooms: [
+      {dining: 'Dining'},
+      {kitchen: 'Kitchen'},
+      {living: 'Living'},
+      {bathroom: 'Bathroom'},
+      {bedroom: '2x Bedroom'},
+      {terrace: 'Terrace'},
+    ]
+  },
+  {
+    id: 2,
+    title: 'TYPE D: Model 02 - 3 Bedroom',
+    imageUrl: '/apartment/typedmodel2.png',
+    rooms: [
+      {dining: 'Dining'},
+      {kitchen: 'Kitchen'},
+      {living: 'Living'},
+      {bedroom: '3x Bedroom'},
+      {terrace: 'Terrace'},
+    ]
+  },
+]
+
+export const SliderImages = [
+  { src: '/slider/01-Cam01-Bird.webp' },
+  { src: '/slider/01-Cam04-bedroom.webp' },
+  { src: '/slider/01-Cam07-Parking.webp' },
+  { src: '/slider/01-Cam08-building-balcony.webp' },
+  { src: '/slider/01-Cam10-Clubhouse-spring.webp' },
+  { src: '/slider/02-Cam-12-Kids-Area.webp' },
+  { src: '/slider/ajaza1.webp' },
+  { src: '/slider/Cam12-Autumn-Sunset.webp' },
 ];

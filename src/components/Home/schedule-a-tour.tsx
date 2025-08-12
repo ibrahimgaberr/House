@@ -1,5 +1,8 @@
 'use client'
-import Image from "next/image";
+
+import Slider from "../slider/Slider";
+
+// import Image from "next/image";
 
 
 
@@ -9,15 +12,15 @@ export default function ScheduleATour() {
     <section id="schedule-a-tour">
       <div className="schedule-a-tour py-5 bg-[#14453D] overflow-hidden">
         <div className="container">
-          <div className="flex flex-col lg:flex-row justify-center items-center gap-3">
+          <div className="flex flex-col lg:flex-row justify-center items-center gap-10">
             <div className="w-full lg:w-1/2 relative z-1 pl-0 lg:pl-5 over">
-
-                <div className="img1 mb-4 flex justify-center lg:block">
+                <Slider/>
+                {/* <div className="img1 mb-4 flex justify-center lg:block">
                   <Image width={300} height={340} className="rounded-4xl" src="/house1.png" alt="House" />
                 </div>
                 <div className="hidden lg:block img2 absolute bottom-10 left-20 z-10">
                   <Image width={300} height={340} className="rounded-4xl" src="/house2.png" alt="House" data-aos="fade-right" data-aos-offset="300" data-aos-easing="ease-in-sine"/>
-                </div>
+                </div> */}
             </div>
             <div className="w-full lg:w-1/2 lg:flex lg:flex-col lg:justify-center lg:h-[500px] text-center lg:text-left">
               <p data-aos="zoom-in" className="bg-gray-200/10 text-white text-center uppercase  text-md lg:text-base inline-block p-2 rounded-3xl w-fit">schedule a tour</p>

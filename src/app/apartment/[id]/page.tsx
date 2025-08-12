@@ -44,9 +44,8 @@ export default function ApartmentDetails({ params }: PageProps) {
   }
 
 return (
-  <div className=" py-25 px-4 
-                  max-w-full sm:max-w-5xl mx-auto">
-    <h1 className="text-4xl font-extrabold mb-6 text-gray-800">
+  <div className=" py-25 px-4 max-w-full sm:max-w-5xl mx-auto mt-10">
+    <h1 className="text-4xl font-extrabold mb-6 text-[#14453D]">
       Apartment #{apartment.id}
     </h1>
 

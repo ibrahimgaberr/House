@@ -61,7 +61,7 @@ export default function Footer() {
           <ul className="flex items-center gap-4 mt-3">
             <li
               className="w-12 h-12 rounded-full bg-[#1f5b4e] flex justify-center items-center cursor-pointer 
-              hover:bg-white hover:scale-110 transition-all duration-300"
+              bg-white hover:scale-110 transition-all duration-300"
             >
               <Image
                 width={20}
@@ -71,14 +71,14 @@ export default function Footer() {
               />
             </li>
             <li
-              className="w-12 h-12 rounded-full bg-[#1f5b4e] flex justify-center items-center cursor-pointer 
-              hover:bg-white hover:scale-110 transition-all duration-300"
+              className="w-12 h-12 rounded-full flex justify-center items-center cursor-pointer 
+              bg-white hover:scale-110 transition-all duration-300"
             >
               <MailPlus className="text-black font-bold not-even:hover:text-[#14453D]" />
             </li>
             <li
-              className="w-12 h-12 rounded-full bg-[#1f5b4e] flex justify-center items-center cursor-pointer 
-              hover:bg-white hover:scale-110 transition-all duration-300"
+              className="w-12 h-12 rounded-full flex justify-center items-center cursor-pointer 
+             bg-white hover:scale-110 transition-all duration-300"
             >
               <Image
                 width={20}

@@ -8,7 +8,7 @@ export default function elsewhere() {
                 <div>
                     <MainSection name="elsewhere Agent" />
                 </div>
-                <div className="grid grid-cols-1 lg:grid-cols-2 gap-10 p-5 items-center justify-items-center">
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-5 p-5 items-center justify-items-center w-full lg:w-[80%] mx-auto">
                     <div className='p-5'>
                         <p className='font-bold text-xl mb-4 leading-7'><span className='font-extrabold'>,elsewhere</span> came to life in
                             2024, and within one year, we maintained to build and stand tall in prime 
@@ -37,7 +37,7 @@ export default function elsewhere() {
                 </div>
             </div>
 
-            <div className='p-5'>
+            <div className='p-5  w-full lg:w-[80%] mx-auto'>
                 <h2 className='font-bold text-[#14453D] text-2xl'>Projects</h2>
                 <p className='text-gray-500 mt-3'>With the experience, vision and passion, we bring the 
                     avant-garde real estate development to the Egyptian market.</p>

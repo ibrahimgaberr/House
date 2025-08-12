@@ -7,12 +7,7 @@ import { useFormik } from "formik";
 import Swal from "sweetalert2";
 import { ApplyNow } from "@/interfaces/form";
 
-export default function ApplyForm({
-  appearTheForm, setAppearForm
-}: {
-  appearTheForm: boolean ,
-  setAppearForm: React.Dispatch<React.SetStateAction<boolean>>
-}) {
+export default function FormJobApply() {
   const validationSchema = Yup.object().shape({
     fullName: Yup.string()
       .min(3, "Full Name must be at least 3 characters")
@@ -40,7 +35,6 @@ export default function ApplyForm({
       showConfirmButton: false,
       timer: 3000,
     });
-    setAppearForm(false);
     resetForm();
   }
 
@@ -83,11 +77,9 @@ export default function ApplyForm({
   return (
     <>
       <div
-        className={`bg-[#F1F4F3] p-12 rounded-none md:rounded-3xl w-full mt-5 ${
-          appearTheForm ? "block" : "hidden"
-        }`}
+        className="block bg-[#F1F4F3] p-12 rounded-none md:rounded-3xl w-full mt-5"
       >
-        <h1 className="font-bold text-2xl mb-4">Send us a Message</h1>
+        <h1 className="font-bold text-2xl text-[#14453D] mb-4">Send us a Message</h1>
         <form id="contactForm" onSubmit={formik.handleSubmit}>
           <div className="flex flex-col md:flex-row gap-4">
             <div className="flex flex-col w-full md:w-1/2">

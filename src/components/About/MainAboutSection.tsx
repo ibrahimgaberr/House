@@ -15,11 +15,11 @@ export default function MainAboutSection() {
       {/* main heading */}
       {/* second */}
       <section id="about-ajaza">
-        <div className="about py-25 overflow-hidden">
+        <div className="py-25">
           <div className="container">
-            <div className="flex flex-col lg:flex-row justify-center items-center gap-3">
-              <div className="w-full lg:w-1/2 relative z-1 pl-0 lg:pl-5 over">
-                <div className="img1 mb-4 flex justify-center lg:block">
+            <div className="flex flex-col xl:flex-row justify-center items-center gap-3">
+              <div className="w-full xl:w-1/2 relative z-1 pl-0 lg:pl-5 over">
+                <div className="img1 mb-5 flex justify-center xl:block">
                   <Image
                     width={400}
                     height={440}
@@ -28,7 +28,7 @@ export default function MainAboutSection() {
                     alt="House"
                   />
                 </div>
-                <div className="hidden lg:block img2 absolute bottom-10 left-20 z-10">
+                <div className="hidden xl:block img2 absolute bottom-10 left-20 z-10">
                   <Image
                     width={400}
                     height={440}
@@ -41,7 +41,7 @@ export default function MainAboutSection() {
                   />
                 </div>
               </div>
-              <div className="w-full lg:w-1/2 lg:flex lg:flex-col lg:justify-center lg:h-[500px] text-left">
+              <div className="w-full xl:w-1/2 lg:flex lg:flex-col lg:justify-center lg:h-[500px] text-left">
                 <h1
                   data-aos="zoom-in"
                   className="bg-gray-200/70 text-[#446A64] uppercase  text-md lg:text-base inline-block p-2 rounded-3xl w-fit"
@@ -141,7 +141,7 @@ in Al Alamein.
                     data-aos-easing="ease-in-sine"
                   />
                 </div>
-                <div className="hidden lg:block img2 absolute top-50 left-50 z-10">
+                <div className="hidden xl:block img2 absolute top-50 left-50 z-10">
                   <Image
                     width={400}
                     height={440}
