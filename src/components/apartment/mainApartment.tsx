@@ -1,24 +1,32 @@
-import { typeARoom1, typeARoom2, typeARoom3, 
-  typeBRoom1, typeBRoom2, typeBRoom3,
-  typeCRoom2, typeCRoom3 , typeCRoom4,
-  typeDRoom2, typeDRoom3, typeDRoom4 } from "@/data/data";
+"use client";
+import { TypeA, TypeB, TypeC, TypeD } from "@/data/data";
 import MainSection from "../layout/mainSection";
 import Image from "next/image";
-import { BedDouble, Bath } from "lucide-react";
-import Link from "next/link";
+import {
+  BedDouble,
+  Bath,
+  UtensilsCrossed,
+  Sun,
+  Table,
+  Shirt,
+  DoorOpen,
+  House,
+} from "lucide-react";
 import { Tabs, TabsList, TabsTrigger, TabsContent } from "@/components/ui/tabs";
+import { useState } from "react";
 
 export default function MainApartment() {
+  const [open, setOpen] = useState(false);
 
   return (
     <>
       {/* Main section */}
       <MainSection name="Apartments" />
-      {/* Main section */}
-      {/* Cards */}
+
+      {/* card */}
+
       <Tabs defaultValue="typeA">
-        {/* Parent Tabs */}
-        <TabsList className="mx-auto py-0 md:py-[27px] mt-20 gap-0 md:gap-3 bg-gray-200/60 rounded-3xl">
+        <TabsList className="mx-auto py-0 md:py-[27px] mt-20 gap-0 md:gap-3 bg-gray-200/60 rounded-3xl transition-all duration-300 hover:scale-103">
           <TabsTrigger
             className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
            data-[state=active]:!text-white"
@@ -48,714 +56,359 @@ export default function MainApartment() {
             Type D
           </TabsTrigger>
         </TabsList>
-
-        {/* Parent 1 Content */}
         <TabsContent value="typeA">
-          {/* Child Tabs inside Parent 1 */}
-          <Tabs defaultValue="1room">
-            <TabsList className="mx-auto py-0 md:py-[15px] mt-3 gap-0 md:gap-3 bg-gray-200/60 rounded-3xl">
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="1room">1 Room</TabsTrigger>
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="2rooms">2 Rooms</TabsTrigger>
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="3rooms">3 Rooms</TabsTrigger>
-            </TabsList>
-            <TabsContent value="1room">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-5 lg:p-20">
-              {typeARoom1.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 lg:p-20">
+            {TypeA.map((item) => (
+              <div
+                key={item.id}
+                className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden bg-white"
+              >
+                {/* Image with hover effect */}
+                <div className="overflow-hidden">
+                  <Image
+                    onClick={() => setOpen(true)}
+                    width={500}
+                    height={320}
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-72 object-cover rounded-t-2xl transform transition-all duration-500 group-hover:scale-105 cursor-pointer"
+                  />
+                </div>
+
+                <div
+                  className={`fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 ${
+                    open ? "block" : "hidden"
+                  }`}
+                >
+                  <Image
+                    onClick={() => setOpen(true)}
+                    width={500}
+                    height={320}
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-[80%] h-72 object-cover rounded-t-2xl"
+                  />
+                  <button
+                    className="bg-[#14453D] text-white px-4 py-2 rounded-lg cursor-pointer absolute top-5 right-5"
+                    onClick={() => setOpen(false)}
                   >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
+                    Close
+                  </button>
+                </div>
 
+                {/* Content section */}
+                <div className="p-5">
+                  <h3 className="text-xl font-bold mb-4 text-gray-800">
+                    {item.title}
+                  </h3>
+                  {/* Room features grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {item.rooms.map((roomObj, roomIndex) => {
+                      const [roomType] = Object.keys(roomObj);
+                      const roomName =
+                        roomObj[roomType as keyof typeof roomObj];
 
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
+                      return (
+                        <div
+                          key={roomIndex}
+                          className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-lg"
+                        >
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                            {roomType.includes("bedroom") ? (
+                              <BedDouble size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("bath") ? (
+                              <Bath size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("kitchen") ? (
+                              <UtensilsCrossed
+                                size={16}
+                                className="text-[#14453D]"
+                              />
+                            ) : roomType.includes("terrace") ? (
+                              <Sun size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("dining") ? (
+                              <Table size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("dressing") ? (
+                              <Shirt size={16} className="text-[#14453D]" />
+                            ) : (
+                              <DoorOpen size={16} className="text-[#14453D]" />
+                            )}
+                          </div>
+                          <span className="text-sm font-medium text-gray-700">
+                            {roomName}
+                          </span>
                         </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
-            </TabsContent>
-            <TabsContent value="2rooms">
-              <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeARoom2.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
-
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
-                        </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
-              </div>
-            </TabsContent>
-            <TabsContent value="3rooms">
-                      <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeARoom3.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
-
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
-                        </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
-              </div>
-            </TabsContent>
-          </Tabs>
+            ))}
+          </div>
         </TabsContent>
-
-        {/* Parent 2 Content */}
-        <TabsContent value="typeB"> 
-          {/* Child Tabs inside Parent 2 */}
-          <Tabs defaultValue="1room">
-            <TabsList className="mx-auto py-0 md:py-[15px] mt-3 gap-0 md:gap-3 bg-gray-200/60 rounded-3xl">
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="1room">1 Room</TabsTrigger>
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="2room">2 Rooms</TabsTrigger>
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="3room">3 Rooms</TabsTrigger>
-            </TabsList>
-            <TabsContent value="1room">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeBRoom1.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+        <TabsContent value="typeB">
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 lg:p-20">
+            {TypeB.map((item) => (
+              <div
+                key={item.id}
+                className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden bg-white"
+              >
+                {/* Image with hover effect */}
+                <div className="overflow-hidden">
+                  <Image
+                    onClick={() => setOpen(true)}
+                    width={500}
+                    height={320}
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-72 object-cover rounded-t-2xl cursor-pointer transform transition-all duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div
+                  className={`fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 ${
+                    open ? "block" : "hidden"
+                  }`}
+                >
+                  <Image
+                    onClick={() => setOpen(true)}
+                    width={500}
+                    height={320}
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-[80%] h-72 object-cover rounded-t-2xl"
+                  />
+                  <button
+                    className="bg-[#14453D] text-white px-4 py-2 rounded-lg cursor-pointer absolute top-5 right-5"
+                    onClick={() => setOpen(false)}
                   >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
+                    Close
+                  </button>
+                </div>
+                {/* Content section */}
+                <div className="p-5">
+                  <h3 className="text-xl font-bold mb-4 text-gray-800">
+                    {item.title}
+                  </h3>
+                  {/* Room features grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {item.rooms.map((roomObj, roomIndex) => {
+                      const [roomType] = Object.keys(roomObj);
+                      const roomName =
+                        roomObj[roomType as keyof typeof roomObj];
 
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
+                      return (
+                        <div
+                          key={roomIndex}
+                          className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-lg"
+                        >
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                            {roomType.includes("bedroom") ? (
+                              <BedDouble size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("bath") ? (
+                              <Bath size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("kitchen") ? (
+                              <UtensilsCrossed
+                                size={16}
+                                className="text-[#14453D]"
+                              />
+                            ) : roomType.includes("terrace") ? (
+                              <Sun size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("dining") ? (
+                              <Table size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("dressing") ? (
+                              <Shirt size={16} className="text-[#14453D]" />
+                            ) : (
+                              <DoorOpen size={16} className="text-[#14453D]" />
+                            )}
+                          </div>
+                          <span className="text-sm font-medium text-gray-700">
+                            {roomName}
+                          </span>
                         </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
-            </TabsContent>
-            <TabsContent value="2room">
-                                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeBRoom2.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
-
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
-                        </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
-              </div>
-            </TabsContent>
-            <TabsContent value="3room">
-                                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeBRoom3.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
-
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
-                        </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
-              </div>
-            </TabsContent>
-          </Tabs>
+            ))}
+          </div>
         </TabsContent>
-        {/* Parent 3 Content */}
         <TabsContent value="typeC">
-          {/* Child Tabs inside Parent 2 */}
-          <Tabs defaultValue="2rooms">
-            <TabsList className="mx-auto py-0 md:py-[15px] mt-3 gap-0 md:gap-3 bg-gray-200/60 rounded-3xl">
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="2rooms">2 Rooms</TabsTrigger>
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="3rooms">3 Rooms</TabsTrigger>
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="4rooms">4 Rooms</TabsTrigger>
-            </TabsList>
-            <TabsContent value="2rooms">
-                                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeCRoom2.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 lg:p-20">
+            {TypeC.map((item) => (
+              <div
+                key={item.id}
+                className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden bg-white"
+              >
+                {/* Image with hover effect */}
+                <div className="overflow-hidden">
+                  <Image
+                    onClick={() => setOpen(true)}
+                    width={500}
+                    height={320}
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-72 object-cover rounded-t-2xl cursor-pointer transform transition-all duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div
+                  className={`fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 ${
+                    open ? "block" : "hidden"
+                  }`}
+                >
+                  <Image
+                    onClick={() => setOpen(true)}
+                    width={500}
+                    height={320}
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-[80%] h-72 object-cover rounded-t-2xl"
+                  />
+                  <button
+                    className="bg-[#14453D] text-white px-4 py-2 rounded-lg cursor-pointer absolute top-5 right-5"
+                    onClick={() => setOpen(false)}
                   >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
+                    Close
+                  </button>
+                </div>
+                {/* Content section */}
+                <div className="p-5">
+                  <h3 className="text-xl font-bold mb-4 text-gray-800">
+                    {item.title}
+                  </h3>
+                  {/* Room features grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {item.rooms.map((roomObj, roomIndex) => {
+                      const [roomType] = Object.keys(roomObj);
+                      const roomName =
+                        roomObj[roomType as keyof typeof roomObj];
 
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
+                      return (
+                        <div
+                          key={roomIndex}
+                          className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-lg"
+                        >
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                            {roomType.includes("bedroom") ? (
+                              <BedDouble size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("bath") ? (
+                              <Bath size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("kitchen") ? (
+                              <UtensilsCrossed
+                                size={16}
+                                className="text-[#14453D]"
+                              />
+                            ) : roomType.includes("terrace") ? (
+                              <Sun size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("dining") ? (
+                              <Table size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("dressing") ? (
+                              <Shirt size={16} className="text-[#14453D]" />
+                            ) : (
+                              <DoorOpen size={16} className="text-[#14453D]" />
+                            )}
+                          </div>
+                          <span className="text-sm font-medium text-gray-700">
+                            {roomName}
+                          </span>
                         </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
-            </TabsContent>
-            <TabsContent value="3rooms">
-                                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeCRoom3.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
-
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
-                        </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
-              </div>
-            </TabsContent>
-            <TabsContent value="4rooms">
-                                                        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeCRoom4.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
-
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
-                        </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
-              </div>
-            </TabsContent>
-          </Tabs>
+            ))}
+          </div>
         </TabsContent>
-        {/* Parent 4 Content */}
         <TabsContent value="typeD">
-          {/* Child Tabs inside Parent 2 */}
-          <Tabs defaultValue="2rooms">
-            <TabsList className="mx-auto py-0 md:py-[15px] mt-3 gap-0 md:gap-3 bg-gray-200/60 rounded-3xl">
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="2rooms">2 Rooms</TabsTrigger>
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="3rooms">3 Rooms</TabsTrigger>
-              <TabsTrigger className="py-2 md:py-5 px-2 md:px-10 rounded-3xl text-base md:text-2xl cursor-pointer !bg-none data-[state=active]:!bg-[#14453D]
-           data-[state=active]:!text-white" value="4rooms">4 Rooms</TabsTrigger>
-            </TabsList>
-            <TabsContent value="2rooms">
-                                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeDRoom2.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
+          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-8 p-5 lg:p-20">
+            {TypeD.map((item) => (
+              <div
+                key={item.id}
+                className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group overflow-hidden bg-white"
+              >
+                {/* Image with hover effect */}
+                <div className="overflow-hidden">
+                  <Image
+                    onClick={() => setOpen(true)}
+                    width={500}
+                    height={320}
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-full h-72 object-cover rounded-t-2xl cursor-pointer transform transition-all duration-500 group-hover:scale-105"
+                  />
+                </div>
+                <div
+                  className={`fixed inset-0 bg-black/40 backdrop-blur-sm flex items-center justify-center z-50 ${
+                    open ? "block" : "hidden"
+                  }`}
+                >
+                  <Image
+                    onClick={() => setOpen(true)}
+                    width={500}
+                    height={320}
+                    src={item.imageUrl}
+                    alt={item.title}
+                    className="w-[80%] h-72 object-cover rounded-t-2xl"
+                  />
+                  <button
+                    className="bg-[#14453D] text-white px-4 py-2 rounded-lg cursor-pointer absolute top-5 right-5"
+                    onClick={() => setOpen(false)}
                   >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
+                    Close
+                  </button>
+                </div>
+                {/* Content section */}
+                <div className="p-5">
+                  <h3 className="text-xl font-bold mb-4 text-gray-800">
+                    {item.title}
+                  </h3>
+                  {/* Room features grid */}
+                  <div className="grid grid-cols-2 gap-3">
+                    {item.rooms.map((roomObj, roomIndex) => {
+                      const [roomType] = Object.keys(roomObj);
+                      const roomName =
+                        roomObj[roomType as keyof typeof roomObj];
 
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
+                      return (
+                        <div
+                          key={roomIndex}
+                          className="flex items-center gap-2 bg-gray-50 px-3 py-2 rounded-lg"
+                        >
+                          <div className="flex-shrink-0 w-8 h-8 rounded-full bg-blue-100 flex items-center justify-center">
+                            {roomType.includes("bedroom") ? (
+                              <BedDouble size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("bath") ? (
+                              <Bath size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("kitchen") ? (
+                              <UtensilsCrossed
+                                size={16}
+                                className="text-[#14453D]"
+                              />
+                            ) : roomType.includes("terrace") ? (
+                              <Sun size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("dining") ? (
+                              <Table size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("dressing") ? (
+                              <Shirt size={16} className="text-[#14453D]" />
+                            ) : roomType.includes("living") ? (
+                              <House size={16} className="text-[#14453D]" />
+                            ) : (
+                              <DoorOpen size={16} className="text-[#14453D]" />
+                            )}
+                          </div>
+                          <span className="text-sm font-medium text-gray-700">
+                            {roomName}
+                          </span>
                         </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
+                      );
+                    })}
+                  </div>
+                </div>
               </div>
-            </TabsContent>
-            <TabsContent value="3rooms">
-                                          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeDRoom3.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
-
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
-                        </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
-              </div>
-            </TabsContent>
-            <TabsContent value="4rooms">
-                            <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6 p-5 lg:p-20">
-              {typeDRoom4.map((item) => 
-              <div key={item.id}
-                    className="rounded-2xl shadow-lg hover:shadow-xl transition-all duration-300 group"
-                  >
-                    <div className="flex flex-col gap-2">
-                      {/* Image container with overlay */}
-                       <Link
-                        href={`/apartment/${item.id}`}
-                        className="cursor-pointer"
-                       >
-                      <div className="relative overflow-hidden rounded">
-                         <Image
-                          width={100}
-                          height={148}
-                          src={item.images.imgURL[0]}
-                          alt="image"
-                          className="w-full h-80 object-cover rounded-2xl transform transition-all duration-500 group-hover:scale-110 group-hover:rounded-2xl"
-                          />
-
-
-                        {/* Overlay that slides up */}
-                        <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-500 flex items-end">
-                          <div className="w-full transform translate-y-full group-hover:translate-y-0 transition-transform duration-500 p-4 text-white"></div>
-                        </div>
-                      </div>
-                       </Link>
-                      <h3 className="text-xl mb-3 p-4 font-semibold">
-                        {item.subDescription}
-                      </h3>
-                      <div className="flex items-center gap-4 text-sm text-gray-600 pl-4 pb-4">
-                        <span>
-                          <BedDouble
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bedrooms}
-                        </span>
-                        <span>
-                          <Bath
-                            size={20}
-                            strokeWidth={1.75}
-                            className="inline-block"
-                          />{" "}
-                          x{item.bathrooms}
-                        </span>
-                      </div>
-                    </div>
-                    </div>
-                  )}
-              </div>
-            </TabsContent>
-          </Tabs>
+            ))}
+          </div>
         </TabsContent>
       </Tabs>
-      {/* Cards */}
     </>
   );
 }
